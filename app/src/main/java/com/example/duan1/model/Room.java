@@ -1,0 +1,49 @@
+package com.example.duan1.model;
+
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+
+@Entity(foreignKeys = @ForeignKey(entity = RoomType.class, childColumns = "idRoomType" , parentColumns = "idRoomType" , onDelete = ForeignKey.CASCADE))
+public class Room {
+    @PrimaryKey
+    @NonNull
+    private String roomCode;
+    private int floor;
+    private int idRoomType;
+
+    public Room() {
+    }
+
+    public Room(@NonNull String roomCode, int floor, int idRoomType) {
+        this.roomCode = roomCode;
+        this.floor = floor;
+        this.idRoomType = idRoomType;
+    }
+
+    @NonNull
+    public String getRoomCode() {
+        return roomCode;
+    }
+
+    public void setRoomCode(@NonNull String roomCode) {
+        this.roomCode = roomCode;
+    }
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
+    public int getIdRoomType() {
+        return idRoomType;
+    }
+
+    public void setIdRoomType(int idRoomType) {
+        this.idRoomType = idRoomType;
+    }
+}
