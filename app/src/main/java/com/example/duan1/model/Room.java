@@ -11,14 +11,16 @@ public class Room {
     @NonNull
     private String roomCode;
     private int floor;
+    private String describe;
     private int idRoomType;
 
     public Room() {
     }
 
-    public Room(@NonNull String roomCode, int floor, int idRoomType) {
+    public Room(@NonNull String roomCode, int floor, String describe, int idRoomType) {
         this.roomCode = roomCode;
         this.floor = floor;
+        this.describe = describe;
         this.idRoomType = idRoomType;
     }
 
@@ -45,5 +47,13 @@ public class Room {
 
     public void setIdRoomType(int idRoomType) {
         this.idRoomType = idRoomType;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 }

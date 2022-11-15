@@ -8,7 +8,6 @@ public class RoomType {
     @PrimaryKey(autoGenerate = true)
     private int idRoomType;
     private String name;
-    private String describe;
     private int rentCode;
     private int area;
     private String image;
@@ -18,10 +17,9 @@ public class RoomType {
     public RoomType() {
     }
 
-    public RoomType(int idRoomType, String name, String describe, int rentCode, int area, String image, int electronicFee, int waterFee) {
+    public RoomType(int idRoomType, String name, int rentCode, int area, String image, int electronicFee, int waterFee) {
         this.idRoomType = idRoomType;
         this.name = name;
-        this.describe = describe;
         this.rentCode = rentCode;
         this.area = area;
         this.image = image;
@@ -43,14 +41,6 @@ public class RoomType {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDescribe() {
-        return describe;
-    }
-
-    public void setDescribe(String describe) {
-        this.describe = describe;
     }
 
     public int getRentCode() {

@@ -19,7 +19,8 @@ public class Member {
     public Member() {
     }
 
-    public Member(int idMember, String name, String birthday, String citizenIdentification, String image, String phone, String hometown, int idContract) {
+    public Member(int idMember, String name, String birthday, String citizenIdentification,
+                  String image, String phone, String hometown, int idContract) {
         this.idMember = idMember;
         this.name = name;
         this.birthday = birthday;
