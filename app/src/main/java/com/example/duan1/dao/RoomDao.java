@@ -22,6 +22,6 @@ public interface RoomDao {
     List<Room> getAll();
 
     @Query("select*from Room join Contract on Room.roomCode = Contract.roomCode " +
-            "where roomCode = :roomCode and status = 1")
+            "where Room.roomCode = :roomCode and status = 1")
     Room checkRoom(String roomCode);
 }
