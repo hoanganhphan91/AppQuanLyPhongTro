@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class RoomManageActivity extends AppCompatActivity {
+import com.example.duan1.databinding.ActivityRoomManageBinding;
 
+public class RoomManageActivity extends AppCompatActivity {
+    ActivityRoomManageBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_room_manage);
+        binding = ActivityRoomManageBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
     }
 }

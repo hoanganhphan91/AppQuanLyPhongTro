@@ -104,14 +104,14 @@ public class MainActivity extends AppCompatActivity {
 
                 //7. Contract
                 db.contractDao().insert(new Contract(1, "2022-11-15", "2023-05-15", 1,"P101"));
-                db.contractDao().insert(new Contract(2, "2022-11-15", "2023-05-15", 1,"P102"));
+                db.contractDao().insert(new Contract(2, "2021-11-15", "2022-05-15", 0,"P102"));
                 db.contractDao().insert(new Contract(3, "2022-11-15", "2023-05-15", 1,"P201"));
                 db.contractDao().insert(new Contract(4, "2022-11-15", "2023-05-15", 1,"P202"));
                 db.contractDao().insert(new Contract(5, "2022-11-15", "2023-05-15", 1,"P301"));
 
                 //8. Invoice
                 db.invoiceDao().insert(new Invoice(1,"2022-11-15",0,0,0,0,"",0,0,0,1,"admin"));
-                db.invoiceDao().insert(new Invoice(2,"2022-11-15",0,0,0,0,"",0,0,0,2,"user1"));
+                db.invoiceDao().insert(new Invoice(2,"2021-11-15",0,10,0,50,"",0,1,2375000,2,"user1"));
                 db.invoiceDao().insert(new Invoice(3,"2022-11-15",0,0,0,0,"",0,0,0,3,"user2"));
                 db.invoiceDao().insert(new Invoice(4,"2022-11-15",0,0,0,0,"",0,0,0,4,"user3"));
                 db.invoiceDao().insert(new Invoice(5,"2022-11-15",0,0,0,0,"",0,0,0,5,"user4"));
