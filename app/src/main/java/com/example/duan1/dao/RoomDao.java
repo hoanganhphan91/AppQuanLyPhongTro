@@ -18,10 +18,16 @@ public interface RoomDao {
     void update(Room o);
     @Delete
     void delete(Room o);
-    @Query("select*from Room")
+    @Query("select*from Room order by floor ")
     List<Room> getAll();
 
     @Query("select*from Room join Contract on Room.roomCode = Contract.roomCode " +
             "where Room.roomCode = :roomCode and status = 1")
     Room checkRoom(String roomCode);
+
+    @Query("select*from Room where roomCode like :search order by floor ")
+    List<Room> searchRoom(String search);
+
+    @Query("select*from Room where roomCode like :search and roomCode not in (select roomCode from Contract where status = 1)")
+    List<Room> filterRoom(String search);
 }

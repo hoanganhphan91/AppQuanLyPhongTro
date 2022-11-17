@@ -10,18 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.duan1.Interface.IClickItemListener;
 import com.example.duan1.databinding.ItemFloorBinding;
+import com.example.duan1.model.Floor;
 import com.example.duan1.model.Room;
 
 import java.util.List;
 
 public class FloorAdapter extends RecyclerView.Adapter<FloorAdapter.MyViewHolder> {
     Context context;
-    List<List<Room>> list;
-
-    public FloorAdapter(Context context, List<List<Room>> list) {
+    List<Floor> list;
+    private IClickItemListener iClickItemListener;
+    public FloorAdapter(Context context, List<Floor> list, IClickItemListener listener) {
         this.context = context;
         this.list = list;
+        this.iClickItemListener = listener;
     }
 
     @NonNull
@@ -32,12 +35,13 @@ public class FloorAdapter extends RecyclerView.Adapter<FloorAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        List<Room> listRoom = list.get(position);
-        holder.binding.tvFloor.setText("Tầng " + listRoom.get(0).getFloor());
-
-        LinearLayoutManager manager = new LinearLayoutManager(context,RecyclerView.HORIZONTAL,false);
-        holder.binding.rvRoom.setLayoutManager(manager);
-        holder.binding.rvRoom.setAdapter(new RoomAdapter(context,listRoom));
+        List<Room> listRoom = list.get(position).getList();
+        if(listRoom.size() > 0){
+            holder.binding.tvFloor.setText("Tầng " + listRoom.get(0).getFloor());
+            LinearLayoutManager manager = new LinearLayoutManager(context,RecyclerView.HORIZONTAL,false);
+            holder.binding.rvRoom.setLayoutManager(manager);
+            holder.binding.rvRoom.setAdapter(new RoomAdapter(context,listRoom,iClickItemListener));
+        }
     }
 
     @Override

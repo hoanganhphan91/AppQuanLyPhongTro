@@ -2,6 +2,7 @@ package com.example.duan1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -153,5 +154,7 @@ public class MainActivity extends AppCompatActivity {
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, list);
         binding.lv.setAdapter(adapter);
+
+        startActivity(new Intent(this,RoomManageActivity.class));
     }
 }

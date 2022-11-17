@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.duan1.Interface.IClickItemListener;
 import com.example.duan1.R;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ItemRoomBinding;
@@ -18,10 +19,11 @@ import java.util.List;
 public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> {
     Context context;
     List<Room> list;
-
-    public RoomAdapter(Context context, List<Room> list) {
+    private IClickItemListener iClickItemListener;
+    public RoomAdapter(Context context, List<Room> list, IClickItemListener listener) {
         this.context = context;
         this.list = list;
+        iClickItemListener = listener;
     }
 
     @NonNull
@@ -36,9 +38,16 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> 
         DbMotel db = DbMotel.getInstance(context);
 
         Room roomCheck = db.roomDao().checkRoom(room.getRoomCode());
-        if(room == null){
+        if(roomCheck == null){
             //Room empty
             holder.binding.img.setImageResource(R.drawable.room_open);
+            holder.itemView.setOnClickListener(view -> {
+                iClickItemListener.onClickItemRoom(room,false);
+            });
+        }else {
+            holder.itemView.setOnClickListener(view -> {
+                iClickItemListener.onClickItemRoom(room,true);
+            });
         }
 
         holder.binding.tvRoomCode.setText(room.getRoomCode());

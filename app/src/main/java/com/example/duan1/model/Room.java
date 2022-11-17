@@ -5,8 +5,10 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(foreignKeys = @ForeignKey(entity = RoomType.class, childColumns = "idRoomType" , parentColumns = "idRoomType" , onDelete = ForeignKey.CASCADE))
-public class Room {
+public class Room implements Serializable {
     @PrimaryKey
     @NonNull
     private String roomCode;
