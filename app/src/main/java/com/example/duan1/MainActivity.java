@@ -1,11 +1,18 @@
 package com.example.duan1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.Manifest;
+import android.app.Application;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityMainBinding;
@@ -26,13 +33,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     DbMotel db;
+    ActivityResultLauncher<String[]> permissionRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         db = DbMotel.getInstance(this);
-
         //Insert data
         try {
             if(db.accountDao().getAll().size() == 0){
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 db.utilityDao().insert(new Utility(9,"có wifi",""));
                 db.utilityDao().insert(new Utility(10,"có bãi để xe",""));
                 db.utilityDao().insert(new Utility(11,"có máy giặt",""));
+                db.utilityDao().insert(new Utility(12,"có điều hòa",""));
 
                 //3. Service
                 db.serviceDao().insert(new Service(1,"bình nước",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
@@ -137,24 +145,28 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        permissionRequest = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
+                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
+                            || ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                            || ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        // No location access granted.
+                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                        builder.setTitle("Chú ý");
+                        builder.setMessage("Bạn cần cấp quyền thì mới sử dụng được ứng dụng");
+                        builder.setNegativeButton("Cấp quyến", (dialogInterface, i) -> {
+                            dialogInterface.dismiss();
+                            permissionRequest.launch(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE});
+                        });
+                        builder.setPositiveButton("Thoát", (dialogInterface, i) -> System.exit(0));
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                        return;
+                    }
+                    startActivity(new Intent(this,RoomManageActivity.class));
 
-    //Test du lieu database
-        //Lấy bảng Accout từ database
-        List<Account> listAcc = db.accountDao().getAll();
-        List<Member> memberList = db.memberDao().getAll();
+        });
+        permissionRequest.launch(new String[] {Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE});
 
-        //Day data len list view
-        List<String> list = new ArrayList<>();
-        for (Account o: listAcc) {
-            list.add(o.getUsername() + " - " + o.getPassword() + " - " + o.getName() + " - " + o.getPhone() + " - " + o.getTitle());
-        }
-        for (Member o: memberList) {
-            list.add(o.getIdMember() + " - " + o.getName() + " - " +o.getBirthday() + " - "
-                    + o.getCitizenIdentification() + " - " + o.getPhone() + " - " + o.getHometown());
-        }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, list);
-        binding.lv.setAdapter(adapter);
-
-        startActivity(new Intent(this,RoomManageActivity.class));
     }
+
 }

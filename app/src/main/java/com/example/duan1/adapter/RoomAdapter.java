@@ -41,15 +41,8 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> 
         if(roomCheck == null){
             //Room empty
             holder.binding.img.setImageResource(R.drawable.room_open);
-            holder.itemView.setOnClickListener(view -> {
-                iClickItemListener.onClickItemRoom(room,false);
-            });
-        }else {
-            holder.itemView.setOnClickListener(view -> {
-                iClickItemListener.onClickItemRoom(room,true);
-            });
         }
-
+        holder.itemView.setOnClickListener(view -> iClickItemListener.onClickItemRoom(room,roomCheck != null));
         holder.binding.tvRoomCode.setText(room.getRoomCode());
     }
 

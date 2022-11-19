@@ -25,6 +25,7 @@ public class RoomManageActivity extends AppCompatActivity {
     List<Room> listRoom;
     List<Floor> listFloor;
     FloorAdapter floorAdapter;
+    DbMotel db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class RoomManageActivity extends AppCompatActivity {
         binding.toolbar.setTitle("QUẢN LÝ PHÒNG");
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
-        DbMotel db = DbMotel.getInstance(this);
+        db = DbMotel.getInstance(this);
 
         listRoom = db.roomDao().getAll();
         listFloor = new ArrayList<>();
@@ -40,10 +41,13 @@ public class RoomManageActivity extends AppCompatActivity {
         floorAdapter = new FloorAdapter(this, listFloor, (room, status) -> {
             //status true - room avalible , false - room empty
             if(status){
-                startActivity(new Intent());
+                Intent intent = new Intent(this,RoomEmptyActivity.class);
+                intent.putExtra("room",room);
+                startActivity(intent);
             }else {
-                startActivity(new Intent(this,RoomEmptyActivity.class));
-
+                Intent intent = new Intent(this,RoomEmptyActivity.class);
+                intent.putExtra("room",room);
+                startActivity(intent);
             }
         });
         LinearLayoutManager manager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
@@ -76,7 +80,6 @@ public class RoomManageActivity extends AppCompatActivity {
                 subListRoom();
                 floorAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -86,7 +89,7 @@ public class RoomManageActivity extends AppCompatActivity {
         listFloor.clear();
         if(listRoom.size() != 0){
             List<Room> listSub = new ArrayList<>();
-            int floor = -99;
+            int floor = -999;
             for (Room room : listRoom) {
                 if(room.getFloor() != floor){
                     if(listSub.size() != 0){
@@ -101,5 +104,12 @@ public class RoomManageActivity extends AppCompatActivity {
             }
             listFloor.add(new Floor(floor,listSub));
         }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listRoom = db.roomDao().getAll();
+        subListRoom();
+        floorAdapter.notifyDataSetChanged();
     }
 }

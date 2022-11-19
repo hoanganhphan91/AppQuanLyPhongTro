@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.duan1.model.Utility;
 import com.example.duan1.model.UtilityDetail;
 
 import java.util.List;
@@ -20,4 +21,7 @@ public interface UtilityDetailDao {
     void delete(UtilityDetail o);
     @Query("select*from UtilityDetail")
     List<UtilityDetail> getAll();
+
+    @Query("select*from UtilityDetail udl join Utility u on udl.idUtility = u.idUtility where idRoomType = :idRoomType")
+    List<Utility> getUtility(int idRoomType);
 }

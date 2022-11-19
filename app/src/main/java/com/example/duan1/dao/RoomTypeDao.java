@@ -20,4 +20,7 @@ public interface RoomTypeDao {
     void delete(RoomType o);
     @Query("select*from RoomType")
     List<RoomType> getAll();
+
+    @Query("select*from RoomType where idRoomType = :idRoomType")
+    RoomType getRoomTypeById(int idRoomType);
 }

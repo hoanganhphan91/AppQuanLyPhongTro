@@ -42,7 +42,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="610dp"
+        android:layout_height="620dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="231dp"
         android:layout_gravity="bottom"/>
