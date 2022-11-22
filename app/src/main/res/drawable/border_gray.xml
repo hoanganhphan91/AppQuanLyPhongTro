@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    Bo goc-->
     <corners android:radius="10dp"/>
+<!--    Duong vien-->
     <stroke android:color="@color/grey" android:width="2dp" />
+<!--    mau nen-->
+<!--<solid android:color="@color/black"></solid>-->
 </shape>

@@ -50,4 +50,10 @@ public abstract class DbMotel extends RoomDatabase {
         }
         return instance;
     }
+
+
+
+
+
+
 }
