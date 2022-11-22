@@ -12,6 +12,5 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Account acc = new Account("admin","admin","Nguyễn Văn A","0123456789","host");
     }
 }

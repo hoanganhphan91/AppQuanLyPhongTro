@@ -1,18 +1,11 @@
 package com.example.duan1;
 
-import android.Manifest;
-import android.app.Application;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
-
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityMainBinding;
@@ -33,13 +26,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     DbMotel db;
-    ActivityResultLauncher<String[]> permissionRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         db = DbMotel.getInstance(this);
+
         //Insert data
         try {
             if(db.accountDao().getAll().size() == 0){
@@ -62,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 db.utilityDao().insert(new Utility(9,"có wifi",""));
                 db.utilityDao().insert(new Utility(10,"có bãi để xe",""));
                 db.utilityDao().insert(new Utility(11,"có máy giặt",""));
-                db.utilityDao().insert(new Utility(12,"có điều hòa",""));
 
                 //3. Service
                 db.serviceDao().insert(new Service(1,"bình nước",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
@@ -107,13 +99,9 @@ public class MainActivity extends AppCompatActivity {
                 //6. Room
                 db.roomDao().insert(new Room("P101", 1,"Phòng sạch sẽ thoáng mát" , 1 ));
                 db.roomDao().insert(new Room("P102", 1,"Phòng sạch sẽ thoáng mát" , 2 ));
-                db.roomDao().insert(new Room("P103", 1,"Phòng sạch sẽ thoáng mát" , 1 ));
                 db.roomDao().insert(new Room("P201", 2,"Phòng sạch sẽ thoáng mát" , 3 ));
                 db.roomDao().insert(new Room("P202", 2,"Phòng sạch sẽ thoáng mát" , 4 ));
-                db.roomDao().insert(new Room("P203", 2,"Phòng sạch sẽ thoáng mát" , 2 ));
                 db.roomDao().insert(new Room("P301", 3,"Phòng sạch sẽ thoáng mát" , 5 ));
-                db.roomDao().insert(new Room("P302", 3,"Phòng sạch sẽ thoáng mát" , 3 ));
-                db.roomDao().insert(new Room("P303", 3,"Phòng sạch sẽ thoáng mát" , 4 ));
 
                 //7. Contract
                 db.contractDao().insert(new Contract(1, "2022-11-15", "2023-05-15", 1,"P101"));
@@ -142,31 +130,15 @@ public class MainActivity extends AppCompatActivity {
                 db.serviceDetailDao().insert(new ServiceDetail(3,3,"2022-11-17",3));
                 db.serviceDetailDao().insert(new ServiceDetail(4,4,"2022-11-17",4));
                 db.serviceDetailDao().insert(new ServiceDetail(5,5,"2022-11-17",5));
+
             }
         }catch (Exception e){
             Toast.makeText(this, "Loi insert du lieu vao database!", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
-        permissionRequest = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
-                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
-                            || ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
-                            || ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                        // No location access granted.
-                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setTitle("Chú ý");
-                        builder.setMessage("Bạn cần cấp quyền thì mới sử dụng được ứng dụng");
-                        builder.setNegativeButton("Cấp quyến", (dialogInterface, i) -> {
-                            dialogInterface.dismiss();
-                            permissionRequest.launch(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE});
-                        });
-                        builder.setPositiveButton("Thoát", (dialogInterface, i) -> System.exit(0));
-                        AlertDialog dialog = builder.create();
-                        dialog.show();
-                        return;
-                    }
-                    startActivity(new Intent(this,RoomManageActivity.class));
-        });
-        permissionRequest.launch(new String[] {Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE});
-    }
 
+        startActivity(new Intent(this,LoginActivity.class));
+
+
+    }
 }

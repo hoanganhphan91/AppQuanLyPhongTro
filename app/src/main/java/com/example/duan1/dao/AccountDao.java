@@ -13,11 +13,14 @@ import java.util.List;
 @Dao
 public interface AccountDao {
     @Insert
-    void insert(Account account);
+    long insert(Account account);
     @Update
     void update(Account account);
     @Delete
     void delete(Account account);
     @Query("select*from Account")
     List<Account> getAll();
+
+    @Query("select*from Account where username = :username and password = :password limit 1")
+    Account checkLogin(String username, String password);
 }
