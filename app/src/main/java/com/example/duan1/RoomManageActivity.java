@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.duan1.Interface.IClickItemListener;
 import com.example.duan1.adapter.FloorAdapter;
@@ -41,9 +42,7 @@ public class RoomManageActivity extends AppCompatActivity {
         floorAdapter = new FloorAdapter(this, listFloor, (room, status) -> {
             //status true - room avalible , false - room empty
             if(status){
-                Intent intent = new Intent(this,RoomEmptyActivity.class);
-                intent.putExtra("room",room);
-                startActivity(intent);
+                Toast.makeText(this, "room avalible!", Toast.LENGTH_SHORT).show();
             }else {
                 Intent intent = new Intent(this,RoomEmptyActivity.class);
                 intent.putExtra("room",room);

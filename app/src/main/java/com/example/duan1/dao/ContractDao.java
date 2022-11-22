@@ -20,4 +20,6 @@ public interface ContractDao {
     void delete(Contract contract);
     @Query("select*from Contract")
     List<Contract> getAll();
+    @Query("select*from Contract order by idContract desc limit 1")
+    Contract getContractNewest();
 }

@@ -3,6 +3,7 @@ package com.example.duan1;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -37,8 +38,7 @@ public class RoomEmptyActivity extends AppCompatActivity {
         //btn Back
         binding.imgBack.setOnClickListener(view -> finish());
         //image room
-        RequestManager requestManager = Glide.with(this);
-        requestManager.load(Uri.parse(roomType.getImage())).into(binding.imgRoom);
+        Glide.with(this).load(Uri.parse(roomType.getImage())).into(binding.imgRoom);
         //Show utility
         showUtilyti();
         //Delete
@@ -60,6 +60,12 @@ public class RoomEmptyActivity extends AppCompatActivity {
                 dialogInterface.dismiss();
             });
             builder.create().show();
+        });
+        //create contract
+        binding.btnCreateContract.setOnClickListener(view -> {
+            Intent intent = new Intent(this,CreateContractActivity.class);
+            intent.putExtra("room",room);
+            startActivity(intent);
         });
     }
 

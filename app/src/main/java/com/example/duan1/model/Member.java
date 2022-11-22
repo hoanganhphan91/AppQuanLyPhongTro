@@ -31,6 +31,16 @@ public class Member {
         this.idContract = idContract;
     }
 
+    public Member(String name, String birthday, String citizenIdentification, String image, String phone, String hometown, int idContract) {
+        this.name = name;
+        this.birthday = birthday;
+        this.citizenIdentification = citizenIdentification;
+        this.image = image;
+        this.phone = phone;
+        this.hometown = hometown;
+        this.idContract = idContract;
+    }
+
     public int getIdMember() {
         return idMember;
     }

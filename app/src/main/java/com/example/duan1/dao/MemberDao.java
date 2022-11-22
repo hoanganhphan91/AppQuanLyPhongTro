@@ -20,4 +20,6 @@ public interface MemberDao {
     void delete(Member o);
     @Query("select*from Member")
     List<Member> getAll();
+    @Query("select*from Member where idContract = :idContract")
+    List<Member> getMemberByIdContract(int idContract);
 }

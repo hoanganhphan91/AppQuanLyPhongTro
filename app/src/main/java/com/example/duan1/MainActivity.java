@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         try {
             if(db.accountDao().getAll().size() == 0){
                 //1. insert account
-                db.accountDao().insert(new Account("admin","admin","Nguyễn Văn A","0123456789","host"));
-                db.accountDao().insert(new Account("user1","user1","Nguyễn Văn B","0123456789","manager"));
-                db.accountDao().insert(new Account("user2","user2","Nguyễn Văn C","0123456789","manager"));
-                db.accountDao().insert(new Account("user3","user3","Nguyễn Văn D","0123456789","manager"));
-                db.accountDao().insert(new Account("user4","user4","Nguyễn Văn E","0123456789","manager"));
+                db.accountDao().insert(new Account("admin","admin","Nguyễn Văn A","0123456789","host",""));
+                db.accountDao().insert(new Account("user1","user1","Nguyễn Văn B","0123456789","manager",""));
+                db.accountDao().insert(new Account("user2","user2","Nguyễn Văn C","0123456789","manager",""));
+                db.accountDao().insert(new Account("user3","user3","Nguyễn Văn D","0123456789","manager",""));
+                db.accountDao().insert(new Account("user4","user4","Nguyễn Văn E","0123456789","manager",""));
 
                 //2. insert utility
                 db.utilityDao().insert(new Utility(1,"cần đặt cọc",""));
@@ -107,9 +107,13 @@ public class MainActivity extends AppCompatActivity {
                 //6. Room
                 db.roomDao().insert(new Room("P101", 1,"Phòng sạch sẽ thoáng mát" , 1 ));
                 db.roomDao().insert(new Room("P102", 1,"Phòng sạch sẽ thoáng mát" , 2 ));
+                db.roomDao().insert(new Room("P103", 1,"Phòng sạch sẽ thoáng mát" , 1 ));
                 db.roomDao().insert(new Room("P201", 2,"Phòng sạch sẽ thoáng mát" , 3 ));
                 db.roomDao().insert(new Room("P202", 2,"Phòng sạch sẽ thoáng mát" , 4 ));
+                db.roomDao().insert(new Room("P203", 2,"Phòng sạch sẽ thoáng mát" , 2 ));
                 db.roomDao().insert(new Room("P301", 3,"Phòng sạch sẽ thoáng mát" , 5 ));
+                db.roomDao().insert(new Room("P302", 3,"Phòng sạch sẽ thoáng mát" , 3 ));
+                db.roomDao().insert(new Room("P303", 3,"Phòng sạch sẽ thoáng mát" , 4 ));
 
                 //7. Contract
                 db.contractDao().insert(new Contract(1, "2022-11-15", "2023-05-15", 1,"P101"));
@@ -138,13 +142,11 @@ public class MainActivity extends AppCompatActivity {
                 db.serviceDetailDao().insert(new ServiceDetail(3,3,"2022-11-17",3));
                 db.serviceDetailDao().insert(new ServiceDetail(4,4,"2022-11-17",4));
                 db.serviceDetailDao().insert(new ServiceDetail(5,5,"2022-11-17",5));
-
             }
         }catch (Exception e){
             Toast.makeText(this, "Loi insert du lieu vao database!", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
-
         permissionRequest = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
                     if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
                             || ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
@@ -163,10 +165,8 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
                     startActivity(new Intent(this,RoomManageActivity.class));
-
         });
         permissionRequest.launch(new String[] {Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE});
-
     }
 
 }

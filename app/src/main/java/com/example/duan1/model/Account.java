@@ -13,17 +13,20 @@ public class Account {
     private String name;
     private String phone;
     private String title;
+    private String image;
 
     public Account() {
     }
 
-    public Account(String username, String password, String name, String phone, String title) {
+    public Account(@NonNull String username, String password, String name, String phone, String title, String image) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.phone = phone;
         this.title = title;
+        this.image = image;
     }
+
 
     public String getUsername() {
         return username;
@@ -63,5 +66,13 @@ public class Account {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

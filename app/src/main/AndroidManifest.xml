@@ -18,8 +18,14 @@
         android:theme="@style/Theme.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".RoomAvalibleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateContractActivity"
+            android:exported="false" />
+        <activity
             android:name=".RoomEmptyActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".RoomManageActivity"
             android:exported="false" />

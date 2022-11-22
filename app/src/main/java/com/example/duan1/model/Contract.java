@@ -4,8 +4,10 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(foreignKeys = @ForeignKey(entity = Room.class, childColumns = "roomCode", parentColumns = "roomCode", onDelete = ForeignKey.CASCADE))
-public class Contract {
+public class Contract implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int idContract;
     private String statingDate;
@@ -18,6 +20,13 @@ public class Contract {
 
     public Contract(int idContract, String statingDate, String endingDate, int status, String roomCode) {
         this.idContract = idContract;
+        this.statingDate = statingDate;
+        this.endingDate = endingDate;
+        this.status = status;
+        this.roomCode = roomCode;
+    }
+
+    public Contract(String statingDate, String endingDate, int status, String roomCode) {
         this.statingDate = statingDate;
         this.endingDate = endingDate;
         this.status = status;
