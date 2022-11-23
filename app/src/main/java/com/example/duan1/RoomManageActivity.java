@@ -8,13 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.example.duan1.Interface.IClickItemListener;
 import com.example.duan1.adapter.FloorAdapter;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityRoomManageBinding;
+import com.example.duan1.model.Account;
 import com.example.duan1.model.Floor;
 import com.example.duan1.model.Room;
 
@@ -23,6 +21,7 @@ import java.util.List;
 
 public class RoomManageActivity extends AppCompatActivity {
     ActivityRoomManageBinding binding;
+    Account account = new Account("admin","admin","Nguyễn Văn A","0123456789","host","");
     List<Room> listRoom;
     List<Floor> listFloor;
     FloorAdapter floorAdapter;
@@ -31,9 +30,7 @@ public class RoomManageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityRoomManageBinding.inflate(getLayoutInflater());
-        binding.toolbar.setTitle("QUẢN LÝ PHÒNG");
         setContentView(binding.getRoot());
-        setSupportActionBar(binding.toolbar);
         db = DbMotel.getInstance(this);
 
         listRoom = db.roomDao().getAll();
@@ -42,7 +39,10 @@ public class RoomManageActivity extends AppCompatActivity {
         floorAdapter = new FloorAdapter(this, listFloor, (room, status) -> {
             //status true - room avalible , false - room empty
             if(status){
-                Toast.makeText(this, "room avalible!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this,RoomAvalibleActivity.class);
+                intent.putExtra("room",room);
+                intent.putExtra("account",account);
+                startActivity(intent);
             }else {
                 Intent intent = new Intent(this,RoomEmptyActivity.class);
                 intent.putExtra("room",room);

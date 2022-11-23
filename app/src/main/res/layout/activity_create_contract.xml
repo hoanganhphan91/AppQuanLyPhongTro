@@ -18,100 +18,113 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/tool_bar_height"
-            app:title="HỢP ĐỒNG"
-            android:background="@color/orange"
-            app:titleTextColor="@color/white"/>
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:title="">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center|start">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HỢP ĐỒNG"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_6sdp"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/tvRoomCode2"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/_25sdp"
                 android:gravity="center"
                 android:text='@{"Phòng: " + room.roomCode, default = "Phòng: P102"}'
                 android:textColor="@color/black"
-                android:textSize="16dp"
+                android:textSize="@dimen/_14ssp"
                 android:textStyle="bold"/>
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="@dimen/_22sdp"
                     android:gravity="center|start"
                     android:text='@{"Tiền phòng: "+String.format("%,d", roomType.rentCode) + " VND", default = "Tiền phòng: 2.000.000 VND"}'
-                    android:textSize="14dp" />
+                    android:textSize="@dimen/_12ssp" />
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="@dimen/_22sdp"
                     android:gravity="center|start"
                     android:text='@{"Tiền điện: "+String.format("%,d", roomType.electronicFee) + " VND", default = "Tiền phòng: 2.000.000 VND"}'
-                    android:textSize="14dp" />
+                    android:textSize="@dimen/_12ssp" />
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/_22sdp"
                 android:gravity="center|start"
                 android:text='@{"Tiền nước: "+String.format("%,d", roomType.waterFee) + " VND", default = "Tiền nước: 2.000.000 VND"}'
-                android:textSize="14dp" />
+                android:textSize="@dimen/_12ssp" />
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/_22sdp"
                 android:gravity="center|start"
                 android:text='Thành viên:'
-                android:textSize="14dp" />
+                android:textSize="@dimen/_12ssp" />
 
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="450dp">
+                android:layout_height="@dimen/_340sdp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvMember"
-                        android:layout_width="300dp"
+                        android:layout_width="@dimen/_230sdp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"/>
                     <ImageView
                         android:id="@+id/imgAdd"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_add" />
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal">
-
+                android:orientation="horizontal"
+                android:gravity="center">
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnCancel"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_height="@dimen/_30sdp"
                     android:background="@drawable/btn_grey"
-                    android:fontFamily="sans-serif"
                     android:text="Hủy bỏ"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:textSize="@dimen/_11sdp"
                     android:textColor="@color/gray"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnCreateContract"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="@dimen/_30sdp"
                     android:background="@drawable/btn_orange"
-                    android:fontFamily="sans-serif"
-                    android:text="Tạo"
+                    android:text="Tạo hợp đồng"
+                    android:textSize="@dimen/_11sdp"
                     android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>
 

@@ -9,14 +9,17 @@
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/btn_grey.xml" value="0.241" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/btn_orange.xml" value="0.241" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/ed_border_grey.xml" value="0.2545" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_create_contract.xml" value="0.22" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_create_contract.xml" value="0.33" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_home.xml" value="0.3625" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_login.xml" value="0.29743589743589743" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_man_hinh_tao_tai_khoan.xml" value="0.29743589743589743" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_member.xml" value="0.264" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_re_password.xml" value="0.25" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_avalible.xml" value="0.3625" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_empty.xml" value="0.33" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_manage.xml" value="0.176" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_empty.xml" value="0.3527777777777778" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_manage.xml" value="0.5" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_member.xml" value="0.33" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_contract.xml" value="0.3625" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_invoice.xml" value="0.3625" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_member.xml" value="0.3625" />

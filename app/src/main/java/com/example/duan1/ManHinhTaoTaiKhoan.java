@@ -56,12 +56,7 @@ public class ManHinhTaoTaiKhoan extends AppCompatActivity {
 //                    else        Toast.makeText(ManHinhTaoTaiKhoan.this, "Không được bỏ trống", Toast.LENGTH_SHORT).show();
 //
 //                }
-
-
             }
         });
-
-
-
     }
 }

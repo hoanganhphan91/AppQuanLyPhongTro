@@ -12,36 +12,32 @@
             type="com.example.duan1.model.Room" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".RoomEmptyActivity">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:title="">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center|start">
 
                 <ImageView
                     android:id="@+id/imgBack"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_12sdp"
                     app:srcCompat="@drawable/back"
                     android:contentDescription="missing load image" />
 
@@ -50,441 +46,346 @@
                     android:layout_height="wrap_content"
                     android:text="PHÒNG"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
-
-        <FrameLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="11dp"
-            android:background="@drawable/border_gray"
-            android:padding="6dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnCreateContract"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
-
-            <TextView
-                android:id="@+id/tvRoomCode"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center|start"
-                android:text="@{room.roomCode}"
-                android:textSize="14dp" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/id_card" />
-
-            <ImageView
-                android:id="@+id/img3"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="35dp"
-                app:srcCompat="@drawable/money"
-                tools:layout_editor_absoluteX="14dp"
-                tools:layout_editor_absoluteY="43dp" />
-
-            <TextView
-                android:id="@+id/tvRentCode"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="35dp"
-                android:gravity="center|start"
-                android:text="@{String.valueOf(roomType.rentCode)}"
-                android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/tvArea"
-                android:layout_width="180dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="60dp"
-                android:gravity="center|start"
-                android:text="@{String.valueOf(roomType.area)}"
-                android:textSize="14dp" />
-
-            <ImageView
-                android:id="@+id/img5"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="60dp"
-                app:srcCompat="@drawable/area" />
-
-            <TextView
-                android:id="@+id/tvElectronic"
-                android:layout_width="135dp"
-                android:layout_height="20dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:gravity="center|start"
-                android:text="@{String.valueOf(roomType.electronicFee)}"
-                android:textSize="14dp" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="140dp"
-                app:srcCompat="@drawable/electronic"
-                tools:layout_editor_absoluteX="209dp"
-                tools:layout_editor_absoluteY="13dp" />
-
-            <TextView
-                android:id="@+id/tvWater"
-                android:layout_width="135dp"
-                android:layout_height="20dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="35dp"
-                android:gravity="center|start"
-                android:text="@{String.valueOf(roomType.waterFee)}"
-                android:textSize="14dp" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="35dp"
-                android:layout_marginRight="140dp"
-                app:srcCompat="@drawable/water" />
-
-            <TextView
-                android:id="@+id/tvFloor"
-                android:layout_width="135dp"
-                android:layout_height="20dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="60dp"
-                android:gravity="center|start"
-                android:text="@{String.valueOf(room.floor)}"
-                android:textSize="14dp" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="60dp"
-                android:layout_marginRight="140dp"
-                app:srcCompat="@drawable/floor" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="90dp"
-                android:text="Mô tả:"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/tvDesribe"
-                android:layout_width="380dp"
-                android:layout_height="65dp"
-                android:layout_gravity="center|top"
-                android:layout_marginTop="115dp"
-                android:text="@{room.describe}"
-                android:textSize="14dp"
-                android:textStyle="italic" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="180dp"
-                android:text="Hình ảnh:"
-                android:textSize="18dp" />
-
-            <ImageView
-                android:id="@+id/imgRoom"
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_gravity="center|top"
-                android:layout_marginTop="210dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="210dp"
-                android:text="Tiện ích:"
-                android:textSize="18dp" />
-
-            <ImageView
-                android:id="@+id/imgAlarm"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginBottom="160dp"
-                app:srcCompat="@drawable/alarm" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginBottom="140dp"
-                android:gravity="center"
-                android:text="giờ giấc tự do"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgCCTV"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginRight="102dp"
-                android:layout_marginBottom="160dp"
-                app:srcCompat="@drawable/cctv_camera" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginRight="102dp"
-                android:layout_marginBottom="140dp"
-                android:gravity="center"
-                android:text="có cctv"
-                android:textSize="12dp" />
-
-
-            <ImageView
-                android:id="@+id/imgBed"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="102dp"
-                android:layout_marginBottom="160dp"
-                app:srcCompat="@drawable/bed" />
-
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="102dp"
-                android:layout_marginBottom="140dp"
-                android:gravity="center"
-                android:text="có giường ngủ"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgAirConditioner"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="160dp"
-                app:srcCompat="@drawable/air_conditioner" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginBottom="140dp"
-                android:gravity="center"
-                android:text="có điều hòa"
-                android:textSize="12dp" />
-
-
-            <ImageView
-                android:id="@+id/imgFan"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|right"
-                android:layout_marginBottom="90dp"
-                app:srcCompat="@drawable/fan" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|right"
-                android:layout_marginBottom="70dp"
-                android:gravity="center"
-                android:text="có quạt"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgFidge"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginRight="102dp"
-                android:layout_marginBottom="90dp"
-                app:srcCompat="@drawable/fridge" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginRight="102dp"
-                android:layout_marginBottom="70dp"
-                android:gravity="center"
-                android:text="có tủ lạnh"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgMotorcycle"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginLeft="102dp"
-                android:layout_marginBottom="90dp"
-                app:srcCompat="@drawable/motorcycle" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginLeft="102dp"
-                android:layout_marginBottom="70dp"
-                android:gravity="center"
-                android:text="có chỗ để xe"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgCooking"
-                android:layout_width="102dp"
-                android:layout_height="48dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginBottom="90dp"
-                app:srcCompat="@drawable/cooking" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginBottom="70dp"
-                android:gravity="center"
-                android:text="được nấu ăn"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgWashingMachine"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginLeft="102dp"
-                android:layout_marginBottom="20dp"
-                app:srcCompat="@drawable/washing_machine" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginLeft="102dp"
-                android:gravity="center"
-                android:text="có máy giặt"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgMoneyBag"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginBottom="20dp"
-                app:srcCompat="@drawable/money_bag" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|start"
-                android:gravity="center"
-                android:text="cần đặt cọc"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgTelevision"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginRight="102dp"
-                android:layout_marginBottom="20dp"
-                app:srcCompat="@drawable/television" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginRight="102dp"
-                android:gravity="center"
-                android:text="có tivi"
-                android:textSize="12dp" />
-
-            <TextView
-                android:layout_width="102dp"
-                android:layout_height="20dp"
-                android:layout_gravity="bottom|end"
-                android:gravity="center"
-                android:text="có wifi"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/imgWifi"
-                android:layout_width="102dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginBottom="20dp"
-                app:srcCompat="@drawable/wifi" />
-        </FrameLayout>
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="11dp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:text="Thông tin phòng"
             android:textColor="@color/black"
-            android:textSize="22dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/border_gray"
+            android:orientation="vertical"
+            android:padding="@dimen/_4sdp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    app:srcCompat="@drawable/id_card" />
+                <TextView
+                    android:id="@+id/tvRoomCode"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:text='@{room.roomCode,default = "P.201"}'
+                    android:textSize="@dimen/_10ssp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnDeleteRoom"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/btn_grey"
-            android:fontFamily="sans-serif"
-            android:text="Xóa phòng"
-            android:textColor="@color/gray"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnCreateContract"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent" />
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    app:srcCompat="@drawable/money"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnCreateContract"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/btn_orange"
-            android:fontFamily="sans-serif"
-            android:text="Tạo hợp đồng"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnDeleteRoom"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+                <TextView
+                    android:id="@+id/tvRentCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:text='@{String.valueOf(roomType.rentCode),default = "P.201"}'
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    app:srcCompat="@drawable/area" />
+                <TextView
+                    android:id="@+id/tvArea"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:text="@{String.valueOf(roomType.area)}"
+                    android:textSize="@dimen/_10ssp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    app:srcCompat="@drawable/electronic"/>
+
+                <TextView
+                    android:id="@+id/tvElectronic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:text='@{String.valueOf(roomType.electronicFee)}'
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    app:srcCompat="@drawable/water" />
+                <TextView
+                    android:id="@+id/tvWater"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:text="@{String.valueOf(roomType.waterFee)}"
+                    android:textSize="@dimen/_10ssp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    app:srcCompat="@drawable/floor"/>
+
+                <TextView
+                    android:id="@+id/tvFloor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:text='@{String.valueOf(room.floor)}'
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Mô tả:"
+                android:textSize="@dimen/_11ssp" />
+
+            <TextView
+                android:id="@+id/tvDesribe"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_56sdp"
+                android:layout_gravity="center|top"
+                android:text="@{room.describe}"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:text="Hình ảnh:"
+                android:textSize="@dimen/_11ssp" />
+            <ImageView
+                android:id="@+id/imgRoom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:text="Tiện ích:"
+                android:textSize="@dimen/_11sdp" />
+            <GridLayout
+                android:layout_width="@dimen/_276sdp"
+                android:layout_height="@dimen/_141sdp"
+                android:columnCount="4"
+                android:rowCount="6"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/imgAlarm"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/alarm" />
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="giờ giấc tự do"
+                    android:textSize="@dimen/_7ssp" />
+                <ImageView
+                    android:id="@+id/imgCCTV"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/cctv_camera" />
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="có cctv"
+                    android:textSize="@dimen/_7ssp" />
+                <ImageView
+                    android:id="@+id/imgBed"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/bed" />
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="có giường ngủ"
+                    android:textSize="@dimen/_7ssp" />
+
+                <ImageView
+                    android:id="@+id/imgAirConditioner"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/air_conditioner" />
+
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:text="có điều hòa"
+                    android:gravity="center"
+                    android:textSize="@dimen/_7ssp" />
+
+                <ImageView
+                    android:id="@+id/imgFan"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/fan" />
+
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="có quạt"
+                    android:textSize="@dimen/_7ssp" />
+                <ImageView
+                    android:id="@+id/imgFidge"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/fridge" />
+
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="có tủ lạnh"
+                    android:textSize="@dimen/_7ssp" />
+                <ImageView
+                    android:id="@+id/imgMotorcycle"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/motorcycle" />
+
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="có chỗ để xe"
+                    android:textSize="@dimen/_7ssp" />
+
+                <ImageView
+                    android:id="@+id/imgCooking"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/cooking" />
+
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="được nấu ăn"
+                    android:textSize="@dimen/_7ssp" />
+
+                <ImageView
+                    android:id="@+id/imgWashingMachine"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/washing_machine" />
+
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="có máy giặt"
+                    android:textSize="@dimen/_7ssp" />
+                <ImageView
+                    android:id="@+id/imgMoneyBag"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/money_bag" />
+
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="cần đặt cọc"
+                    android:textSize="@dimen/_7ssp" />
+
+                <ImageView
+                    android:id="@+id/imgTelevision"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/television" />
+
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="có tivi"
+                    android:textSize="@dimen/_7ssp" />
+
+                <ImageView
+                    android:id="@+id/imgWifi"
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    app:srcCompat="@drawable/wifi" />
+                <TextView
+                    android:layout_width="@dimen/_69sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:text="có wifi"
+                    android:textSize="@dimen/_7ssp" />
+            </GridLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDeleteRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/btn_grey"
+                android:text="Xóa phòng"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCreateContract"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/btn_orange"
+                android:text="Tạo hợp đồng"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 </layout>
