@@ -51,7 +51,7 @@ public class CreateContractActivity extends AppCompatActivity {
         binding.setRoomType(roomType);
         //create Contract temp
         Date date = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String startDate = format.format(date);
         db.contractDao().insert(new Contract(startDate,"",1,room.getRoomCode()));
         //get Contract create
@@ -99,7 +99,7 @@ public class CreateContractActivity extends AppCompatActivity {
                 bindingMember.edBirthday.setOnClickListener(view -> {
                     DatePickerDialog dp = new DatePickerDialog(CreateContractActivity.this, (datePicker, i, i1, i2) -> {
                         try {
-                            String date2 = i + "/" + (i1 + 1) + "/" + i2;
+                            String date2 = i + "-" + (i1 + 1) + "-" + i2;
                             Date date1 = format.parse(date2);
                             bindingMember.edBirthday.setText(format.format(date1));
                         } catch (ParseException e) {
@@ -157,7 +157,7 @@ public class CreateContractActivity extends AppCompatActivity {
             bindingMember.edBirthday.setOnClickListener(view1 ->{
                 DatePickerDialog dp = new DatePickerDialog(this,(datePicker, i, i1, i2) -> {
                     try {
-                        String date2 = i + "/" + (i1+1) + "/" +i2;
+                        String date2 = i + "-" + (i1+1) + "-" +i2;
                         Date date1 = format.parse(date2);
                         bindingMember.edBirthday.setText(format.format(date1));
                     } catch (ParseException e) {

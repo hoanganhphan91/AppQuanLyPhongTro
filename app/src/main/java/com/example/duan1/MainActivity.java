@@ -66,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
                 db.utilityDao().insert(new Utility(12,"có điều hòa",""));
 
                 //3. Service
-                db.serviceDao().insert(new Service(1,"bình nước",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
-                db.serviceDao().insert(new Service(2,"mỳ tôm trứng",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
-                db.serviceDao().insert(new Service(3,"bánh mỳ trứng",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
-                db.serviceDao().insert(new Service(4,"bình gas",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
-                db.serviceDao().insert(new Service(5,"mỳ xào",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
+                db.serviceDao().insert(new Service(1,"bình nước",15000,"content://media/external/images/media/59561"));
+                db.serviceDao().insert(new Service(2,"mỳ tôm trứng",15000,"content://media/external/images/media/59564"));
+                db.serviceDao().insert(new Service(3,"bánh mỳ trứng",15000,"content://media/external/images/media/59563"));
+                db.serviceDao().insert(new Service(4,"bình gas",15000,"content://media/external/images/media/59562"));
+                db.serviceDao().insert(new Service(5,"mỳ xào",15000,"content://media/external/images/media/59565"));
 
                 //4. RoomType
                 db.roomTypeDao().insert(new RoomType(1,"Loại 1", 1500000,10,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg", 3500,20000));

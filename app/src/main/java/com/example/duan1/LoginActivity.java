@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityLoginBinding;
 import com.example.duan1.model.Account;
+import com.example.duan1.model.SessionManage;
 
 import java.util.ArrayList;
 
@@ -41,8 +42,9 @@ public class LoginActivity extends AppCompatActivity {
                 if(account == null){
                     Toast.makeText(this, "Thông tin tài khoản hoặc mật khẩu không chính xác", Toast.LENGTH_SHORT).show();
                 }else {
+                    SessionManage sessionManage = new SessionManage(this);
+                    sessionManage.saveAccount(account);
                     Intent intent = new Intent(this,RoomManageActivity.class);
-                    intent.putExtra("account",account);
                     startActivity(intent);
                 }
             }else {

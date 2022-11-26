@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border.xml" value="0.333" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_black.xml" value="0.333" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_edit_orange.xml" value="0.1795" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_gray.xml" value="0.241" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_search.xml" value="0.234" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_shadow.xml" value="0.2735" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/btn_grey.xml" value="0.241" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/btn_orange.xml" value="0.241" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/ed_border_grey.xml" value="0.2545" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/ic_add_24.xml" value="0.333" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/line_black.xml" value="0.2105" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/textview_border_orange.xml" value="0.333" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_create_contract.xml" value="0.33" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_home.xml" value="0.3625" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_login.xml" value="0.29743589743589743" />
@@ -18,15 +24,18 @@
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_re_password.xml" value="0.25" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_avalible.xml" value="0.3625" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_empty.xml" value="0.3527777777777778" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_manage.xml" value="0.5" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_manage.xml" value="0.33" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_member.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_number_service_detail.xml" value="0.5" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_contract.xml" value="0.3625" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_invoice.xml" value="0.3625" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_member.xml" value="0.3625" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_service.xml" value="0.3484375" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_service.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_add_service.xml" value="0.9" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_floor.xml" value="0.2" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_member_contract.xml" value="0.176" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_room.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_service_detail.xml" value="0.33" />
       </map>
     </option>
   </component>

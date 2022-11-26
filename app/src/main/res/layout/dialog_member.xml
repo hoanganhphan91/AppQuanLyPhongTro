@@ -94,16 +94,20 @@
                 android:id="@+id/edName"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_26sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:textSize="@dimen/_10ssp"
                 android:background="@drawable/border_edit_orange" />
 
             <EditText
                 android:id="@+id/edBirthday"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_26sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:textSize="@dimen/_10ssp"
                 android:focusable="false"
                 android:background="@drawable/border_edit_orange"
                 android:drawableEnd="@drawable/ic_date"/>
@@ -112,23 +116,29 @@
                 android:id="@+id/edCitizenIdentification"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_26sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:textSize="@dimen/_10ssp"
                 android:background="@drawable/border_edit_orange" />
 
             <EditText
                 android:id="@+id/edPhone"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_26sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:textSize="@dimen/_10ssp"
                 android:background="@drawable/border_edit_orange" />
             <EditText
                 android:id="@+id/edHometown"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_26sdp"
+                android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:textSize="@dimen/_10ssp"
                 android:background="@drawable/border_edit_orange" />
             <ImageView
                 android:id="@+id/imgMember"

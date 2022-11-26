@@ -38,8 +38,8 @@ public class MemberContractAdapter extends RecyclerView.Adapter<MemberContractAd
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
        try{
            Member member = list.get(position);
-           holder.binding.tvName.setText(member.getName());
-           holder.binding.tvInformation.setText(member.getHometown() + " - " + member.getBirthday());
+           holder.binding.setMember(member);
+           holder.binding.executePendingBindings();
            Glide.with(context).load(Uri.parse(member.getImage())).into(holder.binding.imgAvatar);
            holder.binding.imgDelete.setOnClickListener(view -> onClickItemMember.onClickDelete(member,position));
            holder.binding.imgEdit.setOnClickListener(view -> onClickItemMember.onClickEdit(member,position));

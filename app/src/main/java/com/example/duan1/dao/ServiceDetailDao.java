@@ -19,4 +19,7 @@ public interface ServiceDetailDao {
     void delete(ServiceDetail o);
     @Query("select*from ServiceDetail")
     List<ServiceDetail> getAll();
+
+    @Query("select*from ServiceDetail where idInvoice = :idInvoice order by idServiceDetail desc")
+    List<ServiceDetail> getServiceDetailByIdInvoidce(int idInvoice);
 }

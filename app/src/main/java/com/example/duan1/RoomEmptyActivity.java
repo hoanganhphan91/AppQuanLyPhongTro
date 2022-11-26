@@ -43,7 +43,7 @@ public class RoomEmptyActivity extends AppCompatActivity {
         showUtilyti();
         //Delete
         binding.btnDeleteRoom.setOnClickListener(view -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialog);
             builder.setTitle("Xóa phòng");
             builder.setMessage("Bạn có chắc xóa phòng?");
             builder.setNegativeButton("Xác nhận", (dialogInterface, i) -> {

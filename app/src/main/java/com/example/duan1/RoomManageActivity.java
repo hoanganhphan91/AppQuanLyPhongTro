@@ -12,7 +12,6 @@ import android.text.TextWatcher;
 import com.example.duan1.adapter.FloorAdapter;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityRoomManageBinding;
-import com.example.duan1.model.Account;
 import com.example.duan1.model.Floor;
 import com.example.duan1.model.Room;
 
@@ -21,7 +20,6 @@ import java.util.List;
 
 public class RoomManageActivity extends AppCompatActivity {
     ActivityRoomManageBinding binding;
-    Account account = new Account("admin","admin","Nguyễn Văn A","0123456789","host","");
     List<Room> listRoom;
     List<Floor> listFloor;
     FloorAdapter floorAdapter;
@@ -41,7 +39,6 @@ public class RoomManageActivity extends AppCompatActivity {
             if(status){
                 Intent intent = new Intent(this,RoomAvalibleActivity.class);
                 intent.putExtra("room",room);
-                intent.putExtra("account",account);
                 startActivity(intent);
             }else {
                 Intent intent = new Intent(this,RoomEmptyActivity.class);
@@ -55,10 +52,11 @@ public class RoomManageActivity extends AppCompatActivity {
 
         binding.cboFilter.setOnCheckedChangeListener((compoundButton, b) -> {
             listRoom.clear();
+            String keyword = binding.edSearch.getText().toString();
             if(b){
-                listRoom.addAll(db.roomDao().filterRoom("%" + binding.edSearch.getText().toString() + "%"));
+                listRoom.addAll(db.roomDao().filterRoom("%" + keyword + "%"));
             }else {
-                listRoom.addAll(db.roomDao().searchRoom("%" + binding.edSearch.getText().toString() + "%"));
+                listRoom.addAll(db.roomDao().searchRoom("%" + keyword + "%"));
             }
             subListRoom();
             floorAdapter.notifyDataSetChanged();
