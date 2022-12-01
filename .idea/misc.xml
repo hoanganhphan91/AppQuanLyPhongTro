@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PRO1121/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.191" />
+        <entry key="..\:/PRO1121/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.191" />
+        <entry key="..\:/PRO1121/app/src/main/res/drawable/ic_baseline_edit_note_24.xml" value="0.191" />
+        <entry key="..\:/PRO1121/app/src/main/res/drawable/purple_background.xml" value="0.124" />
+        <entry key="..\:/PRO1121/app/src/main/res/drawable/rounded_edittext.xml" value="0.124" />
+        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_account_manager.xml" value="0.25416666666666665" />
+        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_add_account.xml" value="0.1" />
+        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_add_service.xml" value="0.25416666666666665" />
+        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_service_manager.xml" value="0.25416666666666665" />
+        <entry key="..\:/PRO1121/app/src/main/res/layout/dialog_edit_account.xml" value="0.29683698296836986" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_edit_orange.xml" value="0.1795" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_gray.xml" value="0.241" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_search.xml" value="0.234" />
