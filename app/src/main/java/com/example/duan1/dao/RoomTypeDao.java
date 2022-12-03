@@ -23,4 +23,8 @@ public interface RoomTypeDao {
 
     @Query("select*from RoomType where idRoomType = :idRoomType")
     RoomType getRoomTypeById(int idRoomType);
+
+    @Query("select*from RoomType order by idRoomType Desc limit 1")
+    RoomType getRoomTypeNewest();
+
 }

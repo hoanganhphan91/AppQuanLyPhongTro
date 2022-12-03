@@ -24,4 +24,7 @@ public interface UtilityDetailDao {
 
     @Query("select*from UtilityDetail udl join Utility u on udl.idUtility = u.idUtility where idRoomType = :idRoomType")
     List<Utility> getUtility(int idRoomType);
+
+    @Query("select u.name from UtilityDetail udl join Utility u on udl.idUtility = u.idUtility where idRoomType = :idRoomType")
+    List<String> getListNameUtility(int idRoomType);
 }

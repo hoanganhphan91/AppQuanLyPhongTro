@@ -17,7 +17,7 @@ public class Room implements Serializable {
     private String image;
     private int idRoomType;
 
-    public Room() {
+    public Room(String floor, int i, int parseInt) {
     }
 
     public Room(@NonNull String roomCode, int floor, String describe, String image, int idRoomType) {

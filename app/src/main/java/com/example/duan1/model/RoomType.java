@@ -25,6 +25,14 @@ public class RoomType {
         this.waterFee = waterFee;
     }
 
+    public RoomType(String name, int rentCode, int area, int electronicFee, int waterFee) {
+        this.name = name;
+        this.rentCode = rentCode;
+        this.area = area;
+        this.electronicFee = electronicFee;
+        this.waterFee = waterFee;
+    }
+
     public int getIdRoomType() {
         return idRoomType;
     }
@@ -72,4 +80,6 @@ public class RoomType {
     public void setWaterFee(int waterFee) {
         this.waterFee = waterFee;
     }
+
+
 }

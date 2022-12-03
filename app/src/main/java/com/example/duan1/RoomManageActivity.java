@@ -80,6 +80,9 @@ public class RoomManageActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {}
         });
+
+        binding.fabAdd.setOnClickListener(v -> startActivity(new Intent(this,CreateRoomActivity.class)));
+
     }
 
     private void subListRoom() {
