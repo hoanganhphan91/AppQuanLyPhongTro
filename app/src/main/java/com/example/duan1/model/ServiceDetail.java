@@ -3,11 +3,14 @@ package com.example.duan1.model;
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
-@Entity(primaryKeys = {"idInvoice","idService"},
+@Entity(
 foreignKeys = {@ForeignKey(entity = Invoice.class, childColumns = "idInvoice", parentColumns = "idInvoice", onDelete = ForeignKey.CASCADE),
 @ForeignKey(entity = Service.class,childColumns = "idService", parentColumns = "idService", onDelete = ForeignKey.CASCADE)})
 public class ServiceDetail {
+    @PrimaryKey(autoGenerate = true)
+    private int idServiceDetail;
     @NonNull
     private int idInvoice;
     @NonNull
@@ -23,6 +26,14 @@ public class ServiceDetail {
         this.idService = idService;
         this.date = date;
         this.number = number;
+    }
+
+    public int getIdServiceDetail() {
+        return idServiceDetail;
+    }
+
+    public void setIdServiceDetail(int idServiceDetail) {
+        this.idServiceDetail = idServiceDetail;
     }
 
     public int getIdInvoice() {

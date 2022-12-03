@@ -20,4 +20,7 @@ public interface InvoiceDao {
     void delete(Invoice o);
     @Query("select*from Invoice")
     List<Invoice> getAll();
+    //get invoice newest by idContract
+    @Query("select*from Invoice where idContract = :idContract order by date desc limit 1")
+    Invoice getInvoiceNewestByIdContract(int idContract);
 }

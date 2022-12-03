@@ -10,19 +10,17 @@ public class RoomType {
     private String name;
     private int rentCode;
     private int area;
-    private String image;
     private int electronicFee;
     private int waterFee;
 
     public RoomType() {
     }
 
-    public RoomType(int idRoomType, String name, int rentCode, int area, String image, int electronicFee, int waterFee) {
+    public RoomType(int idRoomType, String name, int rentCode, int area, int electronicFee, int waterFee) {
         this.idRoomType = idRoomType;
         this.name = name;
         this.rentCode = rentCode;
         this.area = area;
-        this.image = image;
         this.electronicFee = electronicFee;
         this.waterFee = waterFee;
     }
@@ -57,14 +55,6 @@ public class RoomType {
 
     public void setArea(int area) {
         this.area = area;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public int getElectronicFee() {

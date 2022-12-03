@@ -2,13 +2,12 @@ package com.example.duan1.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.duan1.Interface.IClickItemListener;
+import com.example.duan1.Interface.IClickItemRoom;
 import com.example.duan1.R;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ItemRoomBinding;
@@ -19,8 +18,8 @@ import java.util.List;
 public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> {
     Context context;
     List<Room> list;
-    private IClickItemListener iClickItemListener;
-    public RoomAdapter(Context context, List<Room> list, IClickItemListener listener) {
+    private IClickItemRoom iClickItemListener;
+    public RoomAdapter(Context context, List<Room> list, IClickItemRoom listener) {
         this.context = context;
         this.list = list;
         iClickItemListener = listener;

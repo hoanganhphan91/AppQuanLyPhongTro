@@ -22,4 +22,6 @@ public interface ContractDao {
     List<Contract> getAll();
     @Query("select*from Contract order by idContract desc limit 1")
     Contract getContractNewest();
+    @Query("select*from Contract where roomCode = :roomCode and status = 1 limit 1")
+    Contract getContractByRoomCode(String roomCode);
 }

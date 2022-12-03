@@ -14,15 +14,17 @@ public class Room implements Serializable {
     private String roomCode;
     private int floor;
     private String describe;
+    private String image;
     private int idRoomType;
 
     public Room() {
     }
 
-    public Room(@NonNull String roomCode, int floor, String describe, int idRoomType) {
+    public Room(@NonNull String roomCode, int floor, String describe, String image, int idRoomType) {
         this.roomCode = roomCode;
         this.floor = floor;
         this.describe = describe;
+        this.image = image;
         this.idRoomType = idRoomType;
     }
 
@@ -57,5 +59,13 @@ public class Room implements Serializable {
 
     public void setDescribe(String describe) {
         this.describe = describe;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -39,23 +39,6 @@ public class ManHinhTaoTaiKhoan extends AppCompatActivity {
                 account.setName(edname.getText().toString());
                 account.setPassword(edpass.getText().toString());
                 account.setPhone(edsdt.getText().toString());
-//                long kq=dao.insert(account);
-//                ten = edname.getText().toString().trim();
-//                matkhau = edpass.getText().toString().trim();
-//                sdt = edsdt.getText().toString().trim();
-//                taikhoan=edntk.getText().toString().trim();
-//                if (ten.equals("")||matkhau.equals("")||sdt.equals("")||taikhoan.equals("")){
-//                    Toast.makeText(ManHinhTaoTaiKhoan.this, "Không được bỏ trống", Toast.LENGTH_SHORT).show();
-//                }else {
-//                    if (kq>0){
-//                        list.clear();
-//                        list.addAll(dao.getAll());
-//                        Toast.makeText(ManHinhTaoTaiKhoan.this, "đăng ký thành công", Toast.LENGTH_SHORT).show();
-//
-//                    }
-//                    else        Toast.makeText(ManHinhTaoTaiKhoan.this, "Không được bỏ trống", Toast.LENGTH_SHORT).show();
-//
-//                }
             }
         });
     }

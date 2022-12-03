@@ -20,4 +20,8 @@ public interface ServiceDao {
     void delete(Service o);
     @Query("select*from Service")
     List<Service> getAll();
+    @Query("select*from Service where name like :keyword")
+    List<Service> search(String keyword);
+    @Query("select*from Service where idService = :idService")
+    Service getServiceById(int idService);
 }
