@@ -24,6 +24,7 @@ public class SessionManage {
         editor.putString(SessionManage.PHONE, account.getPhone());
         editor.putString(SessionManage.TITLE, account.getTitle());
         editor.putString(SessionManage.IMAGE, account.getImage());
+        editor.commit();
     }
 
     public Account fetchAccount(){

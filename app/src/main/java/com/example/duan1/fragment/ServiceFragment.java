@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -58,7 +57,7 @@ public class ServiceFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        db = DbMotel.getInstance(getContext());
+        this.db = DbMotel.getInstance(getContext());
         listSevice = db.serviceDao().getAll();
         binding.rvService.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         binding.rvDetail.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -163,9 +162,9 @@ public class ServiceFragment extends Fragment {
         });
         binding2.btnAdd.setOnClickListener(view -> {
             try {
-                String s = binding2.edNumber.getText().toString();
-                if(s!=""){
-                    int number = Integer.parseInt(s);
+                String stringNumble = binding2.edNumber.getText().toString();
+                if(stringNumble != ""){
+                    int number = Integer.parseInt(stringNumble);
                     if(number != 0){
                         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                         String date = format.format(new Date());

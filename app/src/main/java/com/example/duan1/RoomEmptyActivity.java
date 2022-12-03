@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestManager;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityRoomEmptyBinding;
 import com.example.duan1.model.Room;
@@ -38,7 +37,7 @@ public class RoomEmptyActivity extends AppCompatActivity {
         //btn Back
         binding.imgBack.setOnClickListener(view -> finish());
         //image room
-        Glide.with(this).load(Uri.parse(roomType.getImage())).into(binding.imgRoom);
+        Glide.with(this).load(Uri.parse(room.getImage())).into(binding.imgRoom);
         //Show utility
         showUtilyti();
         //Delete

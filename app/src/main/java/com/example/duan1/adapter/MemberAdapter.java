@@ -3,7 +3,6 @@ package com.example.duan1.adapter;
 import android.content.Context;
 import android.net.Uri;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -14,15 +13,14 @@ import com.bumptech.glide.Glide;
 import com.example.duan1.Interface.iClickItemMember;
 import com.example.duan1.databinding.ItemMemberContractBinding;
 import com.example.duan1.model.Member;
-import com.example.duan1.R;
 
 import java.util.List;
 
-public class MemberContractAdapter extends RecyclerView.Adapter<MemberContractAdapter.MyViewHolder> {
+public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MyViewHolder> {
     Context context;
     List<Member> list;
     iClickItemMember onClickItemMember;
-    public MemberContractAdapter(Context context, List<Member> list, iClickItemMember listener) {
+    public MemberAdapter(Context context, List<Member> list, iClickItemMember listener) {
         this.context = context;
         this.list = list;
         this.onClickItemMember = listener;
@@ -43,6 +41,7 @@ public class MemberContractAdapter extends RecyclerView.Adapter<MemberContractAd
            Glide.with(context).load(Uri.parse(member.getImage())).into(holder.binding.imgAvatar);
            holder.binding.imgDelete.setOnClickListener(view -> onClickItemMember.onClickDelete(member,position));
            holder.binding.imgEdit.setOnClickListener(view -> onClickItemMember.onClickEdit(member,position));
+           holder.itemView.setOnClickListener(view -> onClickItemMember.onClickItem(member,position));
        }catch (Exception e){
            e.printStackTrace();
            Toast.makeText(context, "Lỗi link image member", Toast.LENGTH_SHORT).show();

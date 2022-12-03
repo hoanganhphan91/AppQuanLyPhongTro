@@ -41,6 +41,14 @@ public class Invoice {
         this.username = username;
     }
 
+    public Invoice(int oldWaterIndex, int oldPowerIndicator, int status, int idContract, String username) {
+        this.oldWaterIndex = oldWaterIndex;
+        this.oldPowerIndicator = oldPowerIndicator;
+        this.status = status;
+        this.idContract = idContract;
+        this.username = username;
+    }
+
     public int getIdInvoice() {
         return idInvoice;
     }
