@@ -21,6 +21,12 @@ public class Service {
         this.image = image;
     }
 
+    public Service(String name, int price, String image) {
+        this.name = name;
+        this.price = price;
+        this.image = image;
+    }
+
     public int getIdService() {
         return idService;
     }
