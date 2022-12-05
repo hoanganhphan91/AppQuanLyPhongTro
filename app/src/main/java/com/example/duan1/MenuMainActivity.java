@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -79,7 +80,7 @@ public class MenuMainActivity extends AppCompatActivity {
         navigationBar.setEventListener(new NavigationEventListener() {
             @Override
             public void onItemSelected(int position, LearnosetNavItem selectedNavItem) {
-
+                Log.i("TAG", "onItemSelected: " + position);
             }
 
             @Override

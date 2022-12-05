@@ -120,6 +120,7 @@
 
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/roomManage"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
                         app:cardElevation="@dimen/_4sdp"
@@ -147,6 +148,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/contractManage"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
                         app:cardElevation="@dimen/_4sdp"
@@ -247,6 +249,7 @@
 
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/seviceManage"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
                         app:cardElevation="@dimen/_4sdp"
@@ -272,6 +275,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/createAccount"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
                         app:cardElevation="@dimen/_4sdp"
