@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
                     SessionManage sessionManage = new SessionManage(this);
                     sessionManage.saveAccount(account);
-                    Intent intent = new Intent(this,AccountManagerActivity.class);
+                    Intent intent = new Intent(this,MenuMainActivity.class);
                     startActivity(intent);
                 }
             }else {
