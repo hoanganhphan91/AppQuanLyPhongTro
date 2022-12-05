@@ -44,7 +44,11 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
                     SessionManage sessionManage = new SessionManage(this);
                     sessionManage.saveAccount(account);
+<<<<<<< HEAD
                     Intent intent = new Intent(this,RoomManageActivity.class);
+=======
+                    Intent intent = new Intent(this,MenuMainActivity.class);
+>>>>>>> origin/master
                     startActivity(intent);
                 }
             }else {
