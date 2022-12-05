@@ -12,7 +12,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,19 +19,14 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.duan1.CreateContractActivity;
-import com.example.duan1.Interface.iClickItemMember;
-import com.example.duan1.R;
+import com.example.duan1.Interface.IClickItemMember;
 import com.example.duan1.adapter.MemberAdapter;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.DialogMemberBinding;
-import com.example.duan1.databinding.DialogNumberServiceDetailBinding;
 import com.example.duan1.databinding.FragmentMemberBinding;
 import com.example.duan1.model.Contract;
 import com.example.duan1.model.Member;
 import com.example.duan1.model.Room;
-import com.example.duan1.model.Service;
-import com.example.duan1.model.ServiceDetail;
 import com.example.duan1.viewmodel.RoomViewModel;
 
 import java.text.ParseException;
@@ -75,7 +69,7 @@ public class MemberFragment extends Fragment {
     private void handleObserve() {
         contract = db.contractDao().getContractByRoomCode(room.getRoomCode());
         listMember = db.memberDao().getMemberByIdContract(contract.getIdContract());
-        adapterMember = new MemberAdapter(getContext(), listMember, new iClickItemMember() {
+        adapterMember = new MemberAdapter(getContext(), listMember, new IClickItemMember(){
             @Override
             public void onClickDelete(Member member, int position) {
                 handleItemMemberDelete(member, position);
