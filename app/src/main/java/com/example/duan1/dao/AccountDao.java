@@ -12,8 +12,10 @@ import java.util.List;
 
 @Dao
 public interface AccountDao {
+
     @Insert
     long insert(Account account);
+
     @Update
     void update(Account account);
     @Delete
@@ -23,4 +25,7 @@ public interface AccountDao {
 
     @Query("select*from Account where username = :username and password = :password limit 1")
     Account checkLogin(String username, String password);
+
+    @Query("select*from Account where username =:username")
+    Account checkUsername(String username);
 }

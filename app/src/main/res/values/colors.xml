@@ -11,4 +11,12 @@
     <color name="gray">#A3A3A3</color>
     <color name="grey">#E3E3E3</color>
     <color name="red">#CF0A0A</color>
+
+
+    <color name="colorPrimary">#7b4bff</color>
+    <color name="colorPrimaryDark">#6539ba</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="bgBottomNavigation">#fe485a</color>
 </resources>
+
+

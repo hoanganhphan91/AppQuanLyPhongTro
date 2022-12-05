@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.duan1.database.DbMotel;
@@ -27,13 +28,22 @@ import java.util.ArrayList;
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     DbMotel db ;
+    TextView tvquenmatkhau;
+    SessionManage sessionManage;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        db = DbMotel.getInstance(this);
+        sessionManage = new SessionManage(this);
+        Account account2 = sessionManage.fetchAccount();
+        binding.edUserName.setText(account2.getUsername());
+        binding.edPassword.setText(account2.getPassword());
 
+        db = DbMotel.getInstance(this);
+        tvquenmatkhau = findViewById(R.id.tv_quenmk);
         binding.btnLogin.setOnClickListener(v -> {
             String username = binding.edUserName.getText().toString();
             String password = binding.edPassword.getText().toString();
@@ -42,9 +52,9 @@ public class LoginActivity extends AppCompatActivity {
                 if(account == null){
                     Toast.makeText(this, "Thông tin tài khoản hoặc mật khẩu không chính xác", Toast.LENGTH_SHORT).show();
                 }else {
-                    SessionManage sessionManage = new SessionManage(this);
+
                     sessionManage.saveAccount(account);
-                    Intent intent = new Intent(this,AccountManagerActivity.class);
+                    Intent intent = new Intent(this,RegistrationActivity.class);
                     startActivity(intent);
                 }
             }else {
@@ -52,9 +62,20 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+
+
     }
 
     private boolean checkValidate(String username, String password) {
         return !(username.isEmpty() || password.isEmpty());
     }
-}
+
+
+
+  }
+
+
+
+
+

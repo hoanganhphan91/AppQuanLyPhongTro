@@ -27,6 +27,10 @@ public class SessionManage {
         editor.commit();
     }
 
+    public void dropAccount(){
+        pref.edit().clear().commit();
+    }
+
     public Account fetchAccount(){
         Account account = new Account();
         account.setUsername(pref.getString(SessionManage.USERNAME,""));

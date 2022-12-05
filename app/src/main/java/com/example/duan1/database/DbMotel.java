@@ -1,6 +1,7 @@
 package com.example.duan1.database;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
@@ -52,8 +53,7 @@ public abstract class DbMotel extends RoomDatabase {
     }
 
 
-
-
-
-
+    public SQLiteDatabase getReadableDatabase() {
+        return null;
+    }
 }

@@ -11,7 +11,7 @@
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_150sdp"
         android:layout_margin="@dimen/_6sdp"
-        android:src="@drawable/logo" />
+        app:srcCompat="@drawable/logo"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
@@ -39,14 +39,15 @@
         android:hint="Mật Khẩu"
         android:textSize="@dimen/_12ssp"
         android:inputType="textPassword"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginLeft="@dimen/_80sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:text="Quên Mật Khẩu"
-            android:textColor="@color/purple_700"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tv_quenmk"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_80sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Quên Mật Khẩu"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold" />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogin"
         android:layout_width="@dimen/_230sdp"
