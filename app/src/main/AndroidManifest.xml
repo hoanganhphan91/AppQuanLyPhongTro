@@ -79,7 +79,14 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+
+        </activity>
+        <activity android:name=".CreateRoomActivity"
+            android:exported="false"/>
+        <activity android:name=".CreateRoomTypeActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

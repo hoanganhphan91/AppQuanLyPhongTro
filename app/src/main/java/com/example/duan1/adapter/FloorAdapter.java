@@ -52,6 +52,7 @@ public class FloorAdapter extends RecyclerView.Adapter<FloorAdapter.MyViewHolder
         public MyViewHolder(ItemFloorBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+
         }
     }
 }
