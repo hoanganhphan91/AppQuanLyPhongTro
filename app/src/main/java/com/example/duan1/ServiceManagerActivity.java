@@ -35,19 +35,7 @@ public class ServiceManagerActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
         db = DbMotel.getInstance(this);
-
-//        try {
-//            db.serviceDao().insert(new Service("bình nước",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
-//            db.serviceDao().insert(new Service("mỳ tôm trứng",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
-//        }catch (Exception e){
-//            Toast.makeText(this, "Thêm thất bại", Toast.LENGTH_SHORT).show();
-//        }
-
         serviceList = db.serviceDao().getAll();
-
-//        serviceList.add(new Service(3,"bánh mỳ trứng",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
-//        serviceList.add(new Service(4,"bình gas",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
-//        serviceList.add(new Service(5,"mỳ xào",15000,"file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg"));
 
         loaddata();
 

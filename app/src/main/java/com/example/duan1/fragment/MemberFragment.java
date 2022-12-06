@@ -20,9 +20,11 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.duan1.Interface.IClickItemMember;
+import com.example.duan1.R;
 import com.example.duan1.adapter.MemberAdapter;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.DialogMemberBinding;
+import com.example.duan1.databinding.DialogMemberDetailBinding;
 import com.example.duan1.databinding.FragmentMemberBinding;
 import com.example.duan1.model.Contract;
 import com.example.duan1.model.Member;
@@ -69,7 +71,7 @@ public class MemberFragment extends Fragment {
     private void handleObserve() {
         contract = db.contractDao().getContractByRoomCode(room.getRoomCode());
         listMember = db.memberDao().getMemberByIdContract(contract.getIdContract());
-        adapterMember = new MemberAdapter(getContext(), listMember, new IClickItemMember(){
+        adapterMember = new MemberAdapter(getContext(), listMember, new IClickItemMember() {
             @Override
             public void onClickDelete(Member member, int position) {
                 handleItemMemberDelete(member, position);
@@ -82,7 +84,14 @@ public class MemberFragment extends Fragment {
 
             @Override
             public void onClickItem(Member member, int position) {
-
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext(),R.style.CustomAlertDialog);
+                DialogMemberDetailBinding bindingDialog = DialogMemberDetailBinding.inflate(getLayoutInflater());
+                builder.setView(bindingDialog.getRoot());
+                AlertDialog dialog = builder.create();
+                bindingDialog.setMember(member);
+                bindingDialog.imgAvatar.setImageURI(Uri.parse(member.getImage()));
+                bindingDialog.btnClose.setOnClickListener(view -> dialog.dismiss());
+                dialog.show();
             }
         });
         binding.rvMember.setAdapter(adapterMember);
@@ -141,7 +150,7 @@ public class MemberFragment extends Fragment {
 
         bindingMember.imgMember.setOnClickListener(view ->
                 TedImagePicker.with(getContext()).start(uri -> {
-                    bindingMember.imgMember.setImageURI(uri);
+                    Glide.with(this).load(uri).into(bindingMember.imgMember);
                     bindingMember.imgMember.setMaxHeight(200);
                     pathImage = uri.toString();
                 }));
@@ -159,6 +168,7 @@ public class MemberFragment extends Fragment {
                     member.setCitizenIdentification(citizenIdentification);
                     member.setPhone(phone);
                     member.setHometown(hometown);
+                    member.setImage(pathImage);
                     db.memberDao().update(member);
                     Toast.makeText(getContext(), "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
                     listMember.set(postion,member);

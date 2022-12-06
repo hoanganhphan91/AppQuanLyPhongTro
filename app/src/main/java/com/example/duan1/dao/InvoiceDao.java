@@ -23,4 +23,7 @@ public interface InvoiceDao {
     //get invoice newest by idContract
     @Query("select*from Invoice where idContract = :idContract order by date desc limit 1")
     Invoice getInvoiceNewestByIdContract(int idContract);
+    //get List Invoice by idContract
+    @Query("select*from Invoice where idContract = :idContract order by status ,date desc")
+    List<Invoice> getInvoiceByIdContract(int idContract);
 }

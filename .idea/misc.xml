@@ -3,57 +3,68 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/PRO1121/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.191" />
-        <entry key="..\:/PRO1121/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.191" />
-        <entry key="..\:/PRO1121/app/src/main/res/drawable/ic_baseline_edit_note_24.xml" value="0.191" />
-        <entry key="..\:/PRO1121/app/src/main/res/drawable/purple_background.xml" value="0.124" />
-        <entry key="..\:/PRO1121/app/src/main/res/drawable/rounded_edittext.xml" value="0.124" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_account_manager.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_add_account.xml" value="0.264" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_add_service.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_create_contract.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_menu_main.xml" value="0.264" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/activity_service_manager.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/custom_nav_drawer.xml" value="0.253125" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/dialog_edit_account.xml" value="0.29683698296836986" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/dialog_member.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/dialog_member_detail.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/dialog_number_service_detail.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/fragment_home_fragmnet.xml" value="0.2578125" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/fragment_info_account.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/fragment_invoice.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/fragment_member.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/fragment_re_pass_account.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/item_account.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/item_floor.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/item_member_contract.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/item_room.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/item_service.xml" value="0.25416666666666665" />
-        <entry key="..\:/PRO1121/app/src/main/res/layout/item_service_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border.xml" value="0.333" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_black.xml" value="0.333" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_edit_orange.xml" value="0.1795" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_gray.xml" value="0.241" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_item_gray.xml" value="0.3615" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_item_orange.xml" value="0.3615" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_search.xml" value="0.234" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_shadow.xml" value="0.2735" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/btn_grey.xml" value="0.241" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/btn_orange.xml" value="0.241" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/button_border_2.xml" value="0.3615" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/came.xml" value="0.3615" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/ed_border_grey.xml" value="0.2545" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_create_contract.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/ic_add_24.xml" value="0.333" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/ic_address.xml" value="0.3615" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.3615" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/line_black.xml" value="0.2105" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/rounded_edittext.xml" value="0.3615" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/textview_border_orange.xml" value="0.333" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/a1111111.xml" value="0.25" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_account_manager.xml" value="0.29743589743589743" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_add_account.xml" value="0.22" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_add_service.xml" value="0.29743589743589743" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_create_contract.xml" value="0.22" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_home.xml" value="0.3625" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_login.xml" value="0.29743589743589743" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_man_hinh_tao_tai_khoan.xml" value="0.29743589743589743" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_member.xml" value="0.264" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_menu_main.xml" value="0.29743589743589743" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_re_password.xml" value="0.25" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_registration.xml" value="0.29743589743589743" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_avalible.xml" value="0.3625" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_empty.xml" value="0.3527777777777778" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_manage.xml" value="0.5" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_empty.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_room_manage.xml" value="0.25" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_service_detail.xml" value="0.29743589743589743" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/activity_service_manager.xml" value="0.29743589743589743" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_edit_account.xml" value="0.29743589743589743" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_edit_service.xml" value="0.29743589743589743" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_invoice_detail.xml" value="0.2" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_member.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_member_detail.xml" value="0.2" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/dialog_number_service_detail.xml" value="0.5" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_contract.xml" value="0.3625" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_invoice.xml" value="0.3625" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_member.xml" value="0.3625" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_service.xml" value="0.3484375" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_home_fragmnet.xml" value="0.1371794871794872" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_info_account.xml" value="0.25" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_invoice.xml" value="0.2" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_member.xml" value="0.22" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/fragment_service.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_account.xml" value="0.29743589743589743" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_add_service.xml" value="0.9" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_contract.xml" value="0.2858974358974359" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_floor.xml" value="0.2" />
-        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_member_contract.xml" value="0.176" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_member_contract.xml" value="0.33" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_room.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_room_contract.xml" value="0.25" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_room_invoice.xml" value="0.21794871794871795" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_service.xml" value="0.18" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_service_detail.xml" value="0.33" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/item_show_contract.xml" value="0.20512820512820512" />
+        <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/layout/sf.xml" value="0.2965811965811966" />
+        <entry key="..\:/Users/nguye/.gradle/caches/transforms-3/933fd91551fe3bf86be7acaa86b35e83/transformed/appcompat-1.5.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.20512820512820512" />
       </map>
     </option>
   </component>

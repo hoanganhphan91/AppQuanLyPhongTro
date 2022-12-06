@@ -19,13 +19,14 @@ import com.example.duan1.adapter.MemberAdapter;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityCreateContractBinding;
 import com.example.duan1.databinding.DialogMemberBinding;
+import com.example.duan1.databinding.DialogMemberDetailBinding;
 import com.example.duan1.model.Account;
 import com.example.duan1.model.Contract;
 import com.example.duan1.model.Invoice;
 import com.example.duan1.model.Member;
 import com.example.duan1.model.Room;
 import com.example.duan1.model.RoomType;
-import com.example.duan1.model.SessionManage;
+import com.example.duan1.model.SessionAccount;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -57,8 +58,8 @@ public class CreateContractActivity extends AppCompatActivity {
         RoomType roomType = db.roomTypeDao().getRoomTypeById(room.getIdRoomType());
         binding.setRoom(room);
         binding.setRoomType(roomType);
-        SessionManage sessionManage = new SessionManage(this);
-        account = sessionManage.fetchAccount();
+        SessionAccount sessionAccount = new SessionAccount(this);
+        account = sessionAccount.fetchAccount();
         //create Contract temp
         date = calendar.getTime();
         String startDate = format.format(date);
@@ -76,7 +77,7 @@ public class CreateContractActivity extends AppCompatActivity {
 
             @Override
             public void onClickItem(Member member, int position) {
-
+                handleItemMemberClick(member);
             }
         });
 
@@ -113,6 +114,17 @@ public class CreateContractActivity extends AppCompatActivity {
                 binding.edNumber.setText(number+"");
             }
         });
+    }
+
+    private void handleItemMemberClick(Member member) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.CustomAlertDialog);
+        DialogMemberDetailBinding bindingDialog = DialogMemberDetailBinding.inflate(getLayoutInflater());
+        builder.setView(bindingDialog.getRoot());
+        AlertDialog dialog = builder.create();
+        bindingDialog.setMember(member);
+        bindingDialog.imgAvatar.setImageURI(Uri.parse(member.getImage()));
+        bindingDialog.btnClose.setOnClickListener(view -> dialog.dismiss());
+        dialog.show();
     }
 
     private void handleCreateContract() {

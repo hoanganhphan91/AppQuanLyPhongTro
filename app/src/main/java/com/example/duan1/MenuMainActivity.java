@@ -10,19 +10,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.duan1.FragmentNav.HomeFragmnet;
 import com.example.duan1.FragmentNav.InfoAccount;
 import com.example.duan1.FragmentNav.rePassAccount;
-import com.example.duan1.R;
-import com.example.duan1.database.DbMotel;
-import com.example.duan1.databinding.ActivityAccountManagerBinding;
-import com.example.duan1.databinding.ActivityMenuMainBinding;
-import com.example.duan1.model.Account;
 import com.learnoset.material.ui.learnosetnavigationbar.LearnosetNavItem;
 import com.learnoset.material.ui.learnosetnavigationbar.LearnosetNavigationBar;
-import com.learnoset.material.ui.learnosetnavigationbar.NavItemsGroup;
 import com.learnoset.material.ui.learnosetnavigationbar.NavigationEventListener;
 
 import java.util.List;
@@ -62,18 +55,6 @@ public class MenuMainActivity extends AppCompatActivity {
         rePassItem.setIcon(com.learnoset.learnosetbottombar.R.drawable.privacy_policy_icon);
         rePassItem.setFragment(new rePassAccount(), R.id.fragmentcontainer);
         navigationBar.addNavItem(rePassItem);
-
-
-//        NavItemsGroup comumunicationGroup = new NavItemsGroup("Communication");
-//        comumunicationGroup.addGroupItem(LearnosetNavItem.BuiltInItems.SEND);
-//        comumunicationGroup.addGroupItem(LearnosetNavItem.BuiltInItems.SHARE);
-//
-//        NavItemsGroup toolsGroup = new NavItemsGroup("Tools");
-//        toolsGroup.addGroupItem(LearnosetNavItem.BuiltInItems.PRIVACY_POLICY, new rePassAccount(), R.id.fragmentcontainer);
-//        toolsGroup.addGroupItem(LearnosetNavItem.BuiltInItems.TOOLS);
-//
-//        navigationBar.addItemsGroup(comumunicationGroup);
-//        navigationBar.addItemsGroup(toolsGroup);
 
         navigationBar.setTheme(LearnosetNavigationBar.NavThemes.LIGHT);
         navigationBar.setSelectedItemBackground(LearnosetNavigationBar.NavColors.ORANGE);

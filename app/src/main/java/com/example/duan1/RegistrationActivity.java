@@ -18,7 +18,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.model.Account;
-import com.example.duan1.model.SessionManage;
+import com.example.duan1.model.SessionAccount;
 
 import java.util.ArrayList;
 
@@ -71,7 +71,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     try {
                         db.accountDao().insert(account);
                         Toast.makeText(RegistrationActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-                        SessionManage sessionManage = new SessionManage(RegistrationActivity.this);
+                        SessionAccount sessionManage = new SessionAccount(RegistrationActivity.this);
                         sessionManage.saveAccount(account);
                         startActivity(new Intent(RegistrationActivity.this,LoginActivity.class) );
                     }catch (Exception e){

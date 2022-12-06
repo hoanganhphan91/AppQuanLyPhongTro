@@ -25,7 +25,7 @@ import com.example.duan1.model.Room;
 import com.example.duan1.model.RoomType;
 import com.example.duan1.model.Service;
 import com.example.duan1.model.ServiceDetail;
-import com.example.duan1.model.SessionManage;
+import com.example.duan1.model.SessionAccount;
 import com.example.duan1.model.Utility;
 import com.example.duan1.model.UtilityDetail;
 import com.gun0912.tedpermission.PermissionListener;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        SessionManage sessionManage = new SessionManage(this);
+        SessionAccount sessionManage = new SessionAccount(this);
         sessionManage.dropAccount();
         db = DbMotel.getInstance(this);
         //Insert data
@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //8. Invoice
                 db.invoiceDao().insert(new Invoice(1,"2022-11-15",0,0,0,0,"",0,0,0,1,"admin"));
+                db.invoiceDao().insert(new Invoice(6,"2022-12-15",0,10,0,120,"Đèn hành lang",10000,1,500000,1,"admin"));
                 db.invoiceDao().insert(new Invoice(2,"2021-11-15",0,10,0,50,"",0,1,2375000,2,"user1"));
                 db.invoiceDao().insert(new Invoice(3,"2022-11-15",0,0,0,0,"",0,0,0,3,"user2"));
                 db.invoiceDao().insert(new Invoice(4,"2022-11-15",0,0,0,0,"",0,0,0,4,"user3"));
