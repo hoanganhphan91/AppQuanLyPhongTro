@@ -31,12 +31,12 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.appcompat.widget.SearchView
-        android:layout_margin="18dp"
         android:id="@+id/search_bar"
-        android:layout_gravity="center"
         android:layout_width="335dp"
-        android:background="@drawable/duongvien"
-        android:layout_height="wrap_content" />
+        android:layout_height="57dp"
+        android:layout_gravity="center"
+        android:layout_margin="18dp"
+        android:background="@drawable/shadow_vertical" />
 
 
     <TextView
