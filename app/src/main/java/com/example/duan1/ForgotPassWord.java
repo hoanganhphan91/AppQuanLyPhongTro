@@ -98,5 +98,11 @@ public class ForgotPassWord extends AppCompatActivity {
 //        List<Account> list=db.getInstance(this).accountDao().checkTk(account.getUsername());
 //        return  list!=null && !list.isEmpty();
 //    }
+
+
+
+//
+//        Intent intent = new Intent(this,RegistrationActivity.class);
+//                   startActivity(intent);
     }
 }

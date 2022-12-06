@@ -58,8 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
 
                     sessionManage.saveAccount(account);
-//                    Intent intent = new Intent(this,RegistrationActivity.class);
-//                    startActivity(intent);
+
                 }
             }else {
                 Toast.makeText(this, "Vui lòng không để trống!", Toast.LENGTH_SHORT).show();
@@ -72,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),ForgotPassWord.class);
                 startActivity(intent);
-
 
             }
         });
