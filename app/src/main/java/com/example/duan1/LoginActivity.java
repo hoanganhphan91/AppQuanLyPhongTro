@@ -1,8 +1,11 @@
 package com.example.duan1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Update;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,15 +25,16 @@ import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityLoginBinding;
 import com.example.duan1.model.Account;
 import com.example.duan1.model.SessionManage;
+import com.example.duan1.model.Users;
 
 import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
+//    private static final int MY_REQUEST_CODE = 10;
     ActivityLoginBinding binding;
     DbMotel db ;
     TextView tvquenmatkhau;
     SessionManage sessionManage;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +58,8 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
 
                     sessionManage.saveAccount(account);
-                    Intent intent = new Intent(this,RegistrationActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(this,RegistrationActivity.class);
+//                    startActivity(intent);
                 }
             }else {
                 Toast.makeText(this, "Vui lòng không để trống!", Toast.LENGTH_SHORT).show();
@@ -63,17 +67,42 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        tvquenmatkhau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ForgotPassWord.class);
+                startActivity(intent);
 
+
+            }
+        });
 
     }
+
+//    private void loaddata(){
+//
+//
+//    }
 
     private boolean checkValidate(String username, String password) {
         return !(username.isEmpty() || password.isEmpty());
     }
 
-
-
-  }
+//    private void clickupdatepassword(Users users){
+//        Intent intent = new Intent(LoginActivity.this,ForgotPassWord.class);
+//        Bundle bundle = new Bundle();
+//        bundle.putSerializable("Object password", users);
+//        intent.putExtras(bundle);
+//        startActivityForResult(intent,MY_REQUEST_CODE);
+//    }
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode== MY_REQUEST_CODE && resultCode == Activity.RESULT_OK);
+//        loadData();
+//    }
+}
 
 
 

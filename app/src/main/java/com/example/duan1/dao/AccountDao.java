@@ -7,6 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.duan1.model.Account;
+import com.example.duan1.model.Users;
 
 import java.util.List;
 
@@ -18,8 +19,10 @@ public interface AccountDao {
 
     @Update
     void update(Account account);
+
     @Delete
     void delete(Account account);
+
     @Query("select*from Account")
     List<Account> getAll();
 
@@ -28,4 +31,11 @@ public interface AccountDao {
 
     @Query("select*from Account where username =:username")
     Account checkUsername(String username);
+
+//    @Query("select*from Account where username =:username")
+//    List<Account> checkTk(String username);
+
+//    @Update
+//    void updatepassword(Users users);
+
 }

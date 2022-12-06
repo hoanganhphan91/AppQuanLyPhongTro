@@ -1,6 +1,8 @@
 package com.example.duan1.model;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users  implements Serializable {
     private String name,thepassword,phone_number,password;
 
     public Users(String name, String thepassword, String phone_number, String password) {
