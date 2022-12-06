@@ -25,6 +25,7 @@ import com.example.duan1.model.Room;
 import com.example.duan1.model.RoomType;
 import com.example.duan1.model.Service;
 import com.example.duan1.model.ServiceDetail;
+import com.example.duan1.model.SessionManage;
 import com.example.duan1.model.Utility;
 import com.example.duan1.model.UtilityDetail;
 import com.gun0912.tedpermission.PermissionListener;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        SessionManage sessionManage = new SessionManage(this);
+        sessionManage.dropAccount();
         db = DbMotel.getInstance(this);
         //Insert data
         try {

@@ -217,9 +217,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"/>
+
                     <ImageView
                         android:id="@+id/imgAdd"
-                        android:layout_width="@dimen/_30sdp"
+                        android:layout_width="29dp"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_add" />
