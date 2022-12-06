@@ -30,4 +30,5 @@ public interface RoomDao {
 
     @Query("select*from Room where roomCode like :search and roomCode not in (select roomCode from Contract where status = 1)")
     List<Room> filterRoom(String search);
+
 }

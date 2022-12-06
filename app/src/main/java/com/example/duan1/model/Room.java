@@ -1,9 +1,6 @@
 package com.example.duan1.model;
 
-import android.database.sqlite.SQLiteDatabase;
-
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
@@ -20,7 +17,7 @@ public class Room implements Serializable {
     private String image;
     private int idRoomType;
 
-    public Room(FragmentActivity activity) {
+    public Room(String floor, int i, int parseInt) {
     }
 
     public Room(@NonNull String roomCode, int floor, String describe, String image, int idRoomType) {
@@ -71,12 +68,4 @@ public class Room implements Serializable {
     public void setImage(String image) {
         this.image = image;
     }
-
-    public SQLiteDatabase getReadableDatabase() {
-        synchronized (this) {
-            return getReadableDatabase();
-        }
-    }
-
-
 }

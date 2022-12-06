@@ -53,4 +53,6 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     //avatar tron_hdodenhof
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //learnoset navdrawer
+    implementation 'com.github.learnoset:material:3.38'
 }

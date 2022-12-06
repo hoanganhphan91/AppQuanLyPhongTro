@@ -14,7 +14,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.duan1.Interface.iClickItemMember;
+import com.example.duan1.Interface.IClickItemMember;
 import com.example.duan1.adapter.MemberAdapter;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.ActivityCreateContractBinding;
@@ -65,7 +65,7 @@ public class CreateContractActivity extends AppCompatActivity {
         db.contractDao().insert(new Contract(startDate,"",1,room.getRoomCode()));
         //get Contract create
         contract = db.contractDao().getContractNewest();
-        adapterMember = new MemberAdapter(this, listMember, new iClickItemMember() {
+        adapterMember = new MemberAdapter(this, listMember, new IClickItemMember() {
             @Override
             public void onClickDelete(Member member, int i) {
                 handleItemMemberDelete(member,i);
