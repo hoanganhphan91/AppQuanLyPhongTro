@@ -41,7 +41,6 @@ public class ForgotPassWord extends AppCompatActivity {
         repass = findViewById(R.id.respassword);
         confom = findViewById(R.id.btn_confom);
 //        glDebugHelper =  new GLDebugHelper(this);
-//        db =  new DbMotel_Impl(this)
         db = DbMotel.getInstance(this);
         Intent intent = getIntent();
 
