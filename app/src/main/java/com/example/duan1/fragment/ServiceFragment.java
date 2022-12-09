@@ -25,12 +25,11 @@ import com.example.duan1.adapter.ServiceRoomAdapter;
 import com.example.duan1.database.DbMotel;
 import com.example.duan1.databinding.DialogNumberServiceDetailBinding;
 import com.example.duan1.databinding.FragmentServiceBinding;
-import com.example.duan1.model.Contract;
 import com.example.duan1.model.Invoice;
-import com.example.duan1.model.Room;
 import com.example.duan1.model.Service;
 import com.example.duan1.model.ServiceDetail;
-import com.example.duan1.viewmodel.RoomViewModel;
+import com.example.duan1.viewmodel.InvoiceViewModel;
+import com.example.duan1.viewmodel.TotalViewModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -39,14 +38,13 @@ import java.util.List;
 
 public class ServiceFragment extends Fragment {
     FragmentServiceBinding binding;
-    Room room;
     List<ServiceDetail> listServiceDetail;
     Invoice invoice;
-    Contract contract;
     DbMotel db;
     List<Service> listSevice;
     ServiceRoomAdapter serviceAdapter;
     ServiceDetailAdapter detailAdapter;
+    TotalViewModel model2;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -61,18 +59,18 @@ public class ServiceFragment extends Fragment {
         listSevice = db.serviceDao().getAll();
         binding.rvService.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         binding.rvDetail.setLayoutManager(new LinearLayoutManager(getContext()));
-        //Room viewmodel
-        RoomViewModel model = new ViewModelProvider(getActivity()).get(RoomViewModel.class);
-        model.getRoom().observe(getViewLifecycleOwner(),o -> {
-            room = (Room) o;
+        //Total viewmodel
+        model2 = new ViewModelProvider(getActivity()).get(TotalViewModel.class);
+        //Invoice viewmodel
+        new ViewModelProvider(getActivity()).get(InvoiceViewModel.class).getInvoice().observe(getViewLifecycleOwner(),o -> {
+            invoice = (Invoice) o;
             handleObserve();
         });
-
     }
 
     private void handleObserve(){
-        contract = db.contractDao().getContractByRoomCode(room.getRoomCode());
-        invoice = db.invoiceDao().getInvoiceNewestByIdContract(contract.getIdContract());
+        if(invoice == null)
+            return;
         listServiceDetail = db.serviceDetailDao().getServiceDetailByIdInvoidce(invoice.getIdInvoice());
         detailAdapter = new ServiceDetailAdapter(getContext(), listServiceDetail, new IClickItemServiceDetail() {
             @Override
@@ -114,6 +112,7 @@ public class ServiceFragment extends Fragment {
             Service service = db.serviceDao().getServiceById(o.getIdService());
             total+=o.getNumber()*service.getPrice();
         }
+        model2.setTotal(total);
         binding.tvTotal.setText("Tổng tiền : " + String.format("%,d", total));
     }
 

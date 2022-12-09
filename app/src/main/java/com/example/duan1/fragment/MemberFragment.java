@@ -28,8 +28,7 @@ import com.example.duan1.databinding.DialogMemberDetailBinding;
 import com.example.duan1.databinding.FragmentMemberBinding;
 import com.example.duan1.model.Contract;
 import com.example.duan1.model.Member;
-import com.example.duan1.model.Room;
-import com.example.duan1.viewmodel.RoomViewModel;
+import com.example.duan1.viewmodel.ContractViewModel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -41,7 +40,6 @@ import gun0912.tedimagepicker.builder.TedImagePicker;
 
 public class MemberFragment extends Fragment {
     FragmentMemberBinding binding;
-    Room room;
     Contract contract;
     DbMotel db;
     List<Member> listMember;
@@ -58,10 +56,9 @@ public class MemberFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //Room viewmodel
-        RoomViewModel model = new ViewModelProvider(getActivity()).get(RoomViewModel.class);
-        model.getRoom().observe(getViewLifecycleOwner(),o -> {
-            this.room = (Room) o;
+        //Contract viewmodel
+       new ViewModelProvider(getActivity()).get(ContractViewModel.class).getContract().observe(getViewLifecycleOwner(),o -> {
+            this.contract = (Contract) o;
             handleObserve();
         });
         this.db = DbMotel.getInstance(getContext());
@@ -69,7 +66,6 @@ public class MemberFragment extends Fragment {
     }
 
     private void handleObserve() {
-        contract = db.contractDao().getContractByRoomCode(room.getRoomCode());
         listMember = db.memberDao().getMemberByIdContract(contract.getIdContract());
         adapterMember = new MemberAdapter(getContext(), listMember, new IClickItemMember() {
             @Override

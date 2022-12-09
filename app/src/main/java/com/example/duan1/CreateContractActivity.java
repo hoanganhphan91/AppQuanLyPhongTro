@@ -142,7 +142,7 @@ public class CreateContractActivity extends AppCompatActivity {
         String endDate = format.format(calendar.getTime());
 
         contract.setEndingDate(endDate);
-        Invoice invoice = new Invoice(electronic,water,0,contract.getIdContract(),account.getUsername());
+        Invoice invoice = new Invoice(electronic,water,2,contract.getIdContract(),account.getUsername());
         try {
             db.invoiceDao().insert(invoice);
         }catch (Exception e){

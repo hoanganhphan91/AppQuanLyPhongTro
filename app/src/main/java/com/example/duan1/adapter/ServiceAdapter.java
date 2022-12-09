@@ -133,9 +133,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
                 list.set(position,service);
 
                 loadData();
-
-
-
             }
         });
         builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
@@ -148,19 +145,9 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         alertDialog.show();
     }
     public void addImage(){
-
-        RequestManager requestManager = Glide.with(context);
-
                 TedImagePicker.with(context).start(uri -> {
-                    requestManager.load(uri).into(imageViewEdit);
-                    Log.i("TAG", "Uri: " + uri.toString());
-                    Log.i("TAG", "Path: " + uri.getPath());
-                    Log.i("TAG", "Authority: " + uri.getAuthority());
-                    Log.i("TAG", "getEncodedPath: " + uri.getEncodedPath());
-                    Log.i("TAG", "getEncodedQuery: " + uri.getEncodedQuery());
-                    Log.i("TAG", "getScheme: " + uri.getScheme());
                     strimage = uri.toString();
-
+                    Glide.with(context).load(uri).into(imageViewEdit);
                 });
             }
 

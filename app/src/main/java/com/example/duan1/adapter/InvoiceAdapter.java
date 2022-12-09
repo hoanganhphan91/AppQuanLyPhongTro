@@ -9,7 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.duan1.Interface.IClickItemInvoice;
-import com.example.duan1.databinding.ItemRoomInvoiceBinding;
+import com.example.duan1.R;
+import com.example.duan1.databinding.ItemInvoiceBinding;
 import com.example.duan1.model.Invoice;
 
 import java.text.ParseException;
@@ -32,7 +33,7 @@ public class InvoiceAdapter extends RecyclerView.Adapter<InvoiceAdapter.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(ItemRoomInvoiceBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new MyViewHolder(ItemInvoiceBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     @Override
@@ -44,13 +45,16 @@ public class InvoiceAdapter extends RecyclerView.Adapter<InvoiceAdapter.MyViewHo
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        holder.binding.tvElectronic.setText((invoice.getNewPowerIndicator() - invoice.getOldPowerIndicator())+"");
-        holder.binding.tvElectronic.setText((invoice.getNewWaterIndex() - invoice.getOldWaterIndex())+"");
-        holder.binding.tvTotal.setText(invoice.getTotal()+"");
+        holder.binding.tvElectronic.setText((invoice.getNewPowerIndicator() - invoice.getOldPowerIndicator())+" số");
+        holder.binding.tvWater.setText((invoice.getNewWaterIndex() - invoice.getOldWaterIndex())+" số");
+        holder.binding.tvTotal.setText("Tổng tiền: " + String.format("%,d",invoice.getTotal()));
         if(invoice.getStatus() == 0){
-            holder.binding.layoutPayed.setVisibility(View.VISIBLE);
+            holder.binding.btnPay.setVisibility(View.VISIBLE);
+            holder.binding.itemLayout.setBackgroundResource(R.drawable.border_item_orange);
+            holder.binding.layoutPayed.setVisibility(View.GONE);
         }
         holder.itemView.setOnClickListener(view -> listener.onClickItem(invoice,position));
+        holder.binding.btnPay.setOnClickListener(view -> listener.onClickPay(invoice, position));
     }
 
     @Override
@@ -59,8 +63,8 @@ public class InvoiceAdapter extends RecyclerView.Adapter<InvoiceAdapter.MyViewHo
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
-        ItemRoomInvoiceBinding binding;
-        public MyViewHolder(@NonNull ItemRoomInvoiceBinding itemView) {
+        ItemInvoiceBinding binding;
+        public MyViewHolder(@NonNull ItemInvoiceBinding itemView) {
             super(itemView.getRoot());
             this.binding = itemView;
         }

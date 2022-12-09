@@ -4,5 +4,6 @@
     <string name="show_detail"><u>xem chi tiết</u></string>
     <string name="doanh_thu">Shop</string>
     <string name="dich_vu">Gifts</string>
+    <string name="neu_co"><![CDATA[<nếu có>]]></string>
 
 </resources>

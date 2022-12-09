@@ -20,10 +20,13 @@ public interface InvoiceDao {
     void delete(Invoice o);
     @Query("select*from Invoice")
     List<Invoice> getAll();
-    //get invoice newest by idContract
-    @Query("select*from Invoice where idContract = :idContract order by date desc limit 1")
-    Invoice getInvoiceNewestByIdContract(int idContract);
+    //get invoice temp
+    @Query("select*from Invoice where status = 2 and idContract = :idContract limit 1")
+    Invoice getInvoiceNow(int idContract);
     //get List Invoice by idContract
-    @Query("select*from Invoice where idContract = :idContract order by status ,date desc")
+    @Query("select*from Invoice where idContract = :idContract and status in (0,1) order by status ,date desc")
     List<Invoice> getInvoiceByIdContract(int idContract);
+    //Get invoice not pay - chưa thanh toán bất kì
+    @Query("select*from Invoice where idContract = :idContract and status = 0")
+    Invoice getInvoiceNotPayByIdContract(int idContract);
 }

@@ -4,9 +4,11 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(foreignKeys = {@ForeignKey(entity = Account.class, childColumns = "username", parentColumns = "username", onDelete = ForeignKey.CASCADE),
 @ForeignKey(entity = Contract.class, childColumns = "idContract", parentColumns = "idContract", onDelete = ForeignKey.CASCADE)})
-public class Invoice {
+public class Invoice implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int idInvoice;
     private String date;

@@ -121,19 +121,20 @@ public class MainActivity extends AppCompatActivity {
                 db.roomDao().insert(new Room("P303", 3,"Phòng sạch sẽ thoáng mát" ,"", 4 ));
 
                 //7. Contract
-                db.contractDao().insert(new Contract(1, "2022-11-15", "2023-05-15", 1,"P101"));
-                db.contractDao().insert(new Contract(2, "2021-11-15", "2022-05-15", 0,"P102"));
+                db.contractDao().insert(new Contract(1, "2022-10-15", "2023-05-15", 1,"P101"));
+                db.contractDao().insert(new Contract(2, "2021-11-15", "2022-05-15", 1,"P102"));
                 db.contractDao().insert(new Contract(3, "2022-11-15", "2023-05-15", 1,"P201"));
                 db.contractDao().insert(new Contract(4, "2022-11-15", "2023-05-15", 1,"P202"));
                 db.contractDao().insert(new Contract(5, "2022-11-15", "2023-05-15", 1,"P301"));
 
                 //8. Invoice
-                db.invoiceDao().insert(new Invoice(1,"2022-11-15",0,0,0,0,"",0,0,0,1,"admin"));
-                db.invoiceDao().insert(new Invoice(6,"2022-12-15",0,10,0,120,"Đèn hành lang",10000,1,500000,1,"admin"));
-                db.invoiceDao().insert(new Invoice(2,"2021-11-15",0,10,0,50,"",0,1,2375000,2,"user1"));
-                db.invoiceDao().insert(new Invoice(3,"2022-11-15",0,0,0,0,"",0,0,0,3,"user2"));
-                db.invoiceDao().insert(new Invoice(4,"2022-11-15",0,0,0,0,"",0,0,0,4,"user3"));
-                db.invoiceDao().insert(new Invoice(5,"2022-11-15",0,0,0,0,"",0,0,0,5,"user4"));
+                db.invoiceDao().insert(new Invoice(1,"2022-10-15",0,10,0,120,"",0,0,0,1,"admin"));
+                db.invoiceDao().insert(new Invoice(6,"2022-11-15",10,30,120,190,"Đèn hành lang",10000,1,500000,1,"admin"));
+                db.invoiceDao().insert(new Invoice(7,"2022-12-15",10,0,120,0,"",0,2,0,1,"admin"));
+                db.invoiceDao().insert(new Invoice(2,"2021-11-15",0,10,0,50,"",0,2,2375000,2,"user1"));
+                db.invoiceDao().insert(new Invoice(3,"2022-11-15",0,0,0,0,"",0,2,0,3,"user2"));
+                db.invoiceDao().insert(new Invoice(4,"2022-11-15",0,0,0,0,"",0,2,0,4,"user3"));
+                db.invoiceDao().insert(new Invoice(5,"2022-11-15",0,0,0,0,"",0,2,0,5,"user4"));
 
                 //9. Member
                 db.memberDao().insert(new Member(1,"Nguyễn Văn A", "2000-01-01","024020001101","file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg","0123456789","Thái Bình",1));
@@ -143,11 +144,19 @@ public class MainActivity extends AppCompatActivity {
                 db.memberDao().insert(new Member(5,"Nguyễn Văn E", "2000-05-05","024020001105","file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg","0123456789","Hà Nội",5));
 
                 //10.ServiceDetail
-                db.serviceDetailDao().insert(new ServiceDetail(1,1,"2022-11-17",1));
-                db.serviceDetailDao().insert(new ServiceDetail(2,2,"2022-11-17",2));
-                db.serviceDetailDao().insert(new ServiceDetail(3,3,"2022-11-17",3));
-                db.serviceDetailDao().insert(new ServiceDetail(4,4,"2022-11-17",4));
-                db.serviceDetailDao().insert(new ServiceDetail(5,5,"2022-11-17",5));
+                db.serviceDetailDao().insert(new ServiceDetail(1,1,"2022-10-17",1));
+                db.serviceDetailDao().insert(new ServiceDetail(2,2,"2022-10-17",2));
+                db.serviceDetailDao().insert(new ServiceDetail(3,3,"2022-10-17",3));
+                db.serviceDetailDao().insert(new ServiceDetail(4,4,"2022-10-17",4));
+                db.serviceDetailDao().insert(new ServiceDetail(5,5,"2022-10-01",5));
+                db.serviceDetailDao().insert(new ServiceDetail(6,1,"2022-11-02",1));
+                db.serviceDetailDao().insert(new ServiceDetail(6,2,"2022-11-03",2));
+                db.serviceDetailDao().insert(new ServiceDetail(6,3,"2022-11-04",3));
+                db.serviceDetailDao().insert(new ServiceDetail(6,4,"2022-11-05",4));
+                db.serviceDetailDao().insert(new ServiceDetail(7,1,"2022-12-02",1));
+                db.serviceDetailDao().insert(new ServiceDetail(7,2,"2022-12-03",2));
+                db.serviceDetailDao().insert(new ServiceDetail(7,3,"2022-12-04",3));
+                db.serviceDetailDao().insert(new ServiceDetail(7,4,"2022-12-05",4));
             }
         }catch (Exception e){
             Toast.makeText(this, "Loi insert du lieu vao database!", Toast.LENGTH_SHORT).show();

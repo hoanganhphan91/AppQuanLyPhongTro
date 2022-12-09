@@ -14,10 +14,13 @@ import java.util.List;
 public interface RoomTypeDao {
     @Insert
     void insert(RoomType o);
+
     @Update
     void update(RoomType o);
+
     @Delete
     void delete(RoomType o);
+
     @Query("select*from RoomType")
     List<RoomType> getAll();
 
@@ -27,4 +30,7 @@ public interface RoomTypeDao {
     @Query("select*from RoomType order by idRoomType Desc limit 1")
     RoomType getRoomTypeNewest();
 
+    @Query("select * from RoomType rt join Room r on rt.idRoomType = r.idRoomType " +
+            "join Contract ct on ct.roomCode= r.roomCode where ct.idContract = :idContract limit 1")
+    RoomType getRTByIdContract(int idContract);
 }

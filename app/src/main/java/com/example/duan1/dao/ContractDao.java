@@ -24,4 +24,7 @@ public interface ContractDao {
     Contract getContractNewest();
     @Query("select*from Contract where roomCode = :roomCode and status = 1 limit 1")
     Contract getContractByRoomCode(String roomCode);
+
+    @Query("select*from Contract where idContract = :idContract limit 1")
+    Contract getContractById(int idContract);
 }
