@@ -25,7 +25,7 @@
                 android:layout_marginLeft="@dimen/_50sdp"
 
                 android:gravity="center_vertical"
-                android:paddingRight="@dimen/_90sdp">
+               >
 
 
                 <de.hdodenhof.circleimageview.CircleImageView
