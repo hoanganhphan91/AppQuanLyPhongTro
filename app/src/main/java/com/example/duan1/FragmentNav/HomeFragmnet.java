@@ -1,6 +1,7 @@
 package com.example.duan1.FragmentNav;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,9 +18,12 @@ import com.example.duan1.R;
 import com.example.duan1.RoomManageActivity;
 import com.example.duan1.ServiceManagerActivity;
 import com.example.duan1.databinding.FragmentHomeFragmnetBinding;
+import com.example.duan1.model.Account;
+import com.example.duan1.model.SessionAccount;
 
 public class HomeFragmnet extends Fragment {
     FragmentHomeFragmnetBinding binding;
+    SessionAccount sessionAccount;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,5 +39,10 @@ public class HomeFragmnet extends Fragment {
         binding.roomManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), RoomManageActivity.class)));
         binding.seviceManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), ServiceManagerActivity.class)));
         binding.createAccount.setOnClickListener(v -> startActivity(new Intent(view.getContext(), AccountManagerActivity.class)));
+        sessionAccount = new SessionAccount(getContext());
+        Account account = sessionAccount.fetchAccount();
+        binding.tvName.setText(account.getName().trim());
+        binding.tvPos.setText(account.getTitle().trim());
+        binding.ImageAvatar.setImageURI(Uri.parse(account.getImage()));
     }
 }

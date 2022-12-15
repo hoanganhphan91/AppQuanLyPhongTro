@@ -1,66 +1,80 @@
 package com.example.duan1.FragmentNav;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.duan1.LoginActivity;
 import com.example.duan1.R;
+import com.example.duan1.database.DbMotel;
+import com.example.duan1.databinding.FragmentInfoAccountBinding;
+import com.example.duan1.databinding.FragmentRePassAccountBinding;
+import com.example.duan1.model.Account;
+import com.example.duan1.model.SessionAccount;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link rePassAccount#newInstance} factory method to
- * create an instance of this fragment.
- */
+
+
 public class rePassAccount extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public rePassAccount() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment rePassAccount.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static rePassAccount newInstance(String param1, String param2) {
-        rePassAccount fragment = new rePassAccount();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
+    FragmentRePassAccountBinding binding;
+    Account account;
+    DbMotel dbMotel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_re_pass_account, container, false);
+        binding = FragmentRePassAccountBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        SessionAccount sessionManage = new SessionAccount(getContext());
+        account = sessionManage.fetchAccount();
+        dbMotel = DbMotel.getInstance(getContext());
+        binding.btnXN.setOnClickListener(v -> {
+            if (validate()>0){
+
+
+                if (check() ==true){
+                    Toast.makeText(getContext(), "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
+                    binding.edtReNewPass.setText("");
+                    binding.edtOldPass.setText("");
+                    binding.edtNewPass.setText("");
+                }else {
+                    Toast.makeText(getContext(), "Lỗi", Toast.LENGTH_SHORT).show();
+                }
+            }
+            
+        });
+    }
+
+    public int validate() {
+        int check = 1;
+        if (binding.edtNewPass.getText().length() == 0 || binding.edtOldPass.getText().length() == 0 || binding.edtReNewPass.getText().length() == 0) {
+            Toast.makeText(getContext(), "Không được để trống", Toast.LENGTH_SHORT).show();
+            check = -1;
+        }else if (!binding.edtOldPass.getText().toString().equals(account.getPassword())){
+            Toast.makeText(getContext(), "Sai mật khẩu", Toast.LENGTH_SHORT).show();
+        }else {
+            if (!binding.edtNewPass.getText().toString().equals(binding.edtReNewPass.getText().toString())) {
+                Toast.makeText(getContext(), "Mật khẩu lặp lại không đúng", Toast.LENGTH_SHORT).show();
+                check = -1;
+            }
+        }
+        return check;
+    }
+    public boolean check(){
+        account.setPassword(binding.edtNewPass.getText().toString());
+        dbMotel.accountDao().update(account);;
+        return true;
     }
 }

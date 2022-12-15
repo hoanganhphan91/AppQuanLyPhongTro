@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PRO1121/app/src/main/res/layout/fragment_home_fragmnet.xml" value="0.264" />
+        <entry key="..\:/PRO1121/app/src/main/res/layout/fragment_info_account.xml" value="0.14719202898550723" />
+        <entry key="..\:/PRO1121/app/src/main/res/layout/fragment_re_pass_account.xml" value="0.14719202898550723" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border.xml" value="0.333" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_black.xml" value="0.333" />
         <entry key="..\:/Study/Ky4/PRO1121/DuAn1/app/src/main/res/drawable/border_edit_orange.xml" value="0.1795" />
