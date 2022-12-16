@@ -107,6 +107,7 @@
                 android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_5sdp"
                 android:textSize="@dimen/_10ssp"
                 android:focusable="false"
                 android:background="@drawable/border_edit_orange"
@@ -119,6 +120,7 @@
                 android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:inputType="number"
                 android:textSize="@dimen/_10ssp"
                 android:background="@drawable/border_edit_orange" />
 
@@ -129,6 +131,7 @@
                 android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:inputType="number"
                 android:textSize="@dimen/_10ssp"
                 android:background="@drawable/border_edit_orange" />
             <EditText
@@ -138,6 +141,7 @@
                 android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
+                android:inputType="number"
                 android:textSize="@dimen/_10ssp"
                 android:background="@drawable/border_edit_orange" />
             <ImageView

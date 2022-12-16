@@ -156,13 +156,7 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.MyViewHo
                 TedImagePicker.with(context).start(uri -> {
                     requestManager.load(uri).into(editImgAccount);
                     Log.i("TAG", "Uri: " + uri.toString());
-                    Log.i("TAG", "Path: " + uri.getPath());
-                    Log.i("TAG", "Authority: " + uri.getAuthority());
-                    Log.i("TAG", "getEncodedPath: " + uri.getEncodedPath());
-                    Log.i("TAG", "getEncodedQuery: " + uri.getEncodedQuery());
-                    Log.i("TAG", "getScheme: " + uri.getScheme());
                     strImage = uri.toString();
-
                 });
             }
 

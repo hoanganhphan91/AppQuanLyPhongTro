@@ -45,7 +45,7 @@ public class HomeFragmnet extends Fragment {
         binding.tvName.setText(account.getName().trim());
         binding.tvPos.setText(account.getTitle().trim());
         Glide.with(getContext()).load(Uri.parse(account.getImage())).into(binding.ImageAvatar);
-        if (account.getTitle().equals("manage"))
+        if (!account.getTitle().equals("host"))
             binding.createAccount.setVisibility(View.INVISIBLE);
     }
 }

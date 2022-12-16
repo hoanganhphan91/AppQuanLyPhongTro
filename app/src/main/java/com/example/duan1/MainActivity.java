@@ -70,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
                 db.utilityDao().insert(new Utility(12,"có điều hòa",""));
 
                 //3. Service
-                db.serviceDao().insert(new Service(1,"bình nước",15000,"content://media/external/images/media/59561"));
-                db.serviceDao().insert(new Service(2,"mỳ tôm trứng",15000,"content://media/external/images/media/59564"));
-                db.serviceDao().insert(new Service(3,"bánh mỳ trứng",15000,"content://media/external/images/media/59563"));
-                db.serviceDao().insert(new Service(4,"bình gas",15000,"content://media/external/images/media/59562"));
-                db.serviceDao().insert(new Service(5,"mỳ xào",15000,"content://media/external/images/media/59565"));
+                db.serviceDao().insert(new Service(1,"bình nước",15000,"file:///storage/emulated/0/Pictures/binh_nuoc.png"));
+                db.serviceDao().insert(new Service(2,"mỳ tôm trứng",15000,"file:///storage/emulated/0/Pictures/my_tom_trung.png"));
+                db.serviceDao().insert(new Service(3,"bánh mỳ trứng",15000,"file:///storage/emulated/0/Pictures/banh_my_trung.png"));
+                db.serviceDao().insert(new Service(4,"bình gas",15000,"file:///storage/emulated/0/Pictures/binh_gas.png"));
+                db.serviceDao().insert(new Service(5,"mỳ xào",15000,"file:///storage/emulated/0/Pictures/my_xao.png"));
 
                 //4. RoomType
                 db.roomTypeDao().insert(new RoomType(1,"Loại 1", 1500000,10, 3500,20000));
@@ -137,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
                 db.invoiceDao().insert(new Invoice(5,"2022-11-15",0,0,0,0,"",0,2,0,5,"user4"));
 
                 //9. Member
-                db.memberDao().insert(new Member(1,"Nguyễn Văn A", "2000-01-01","024020001101","file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg","0123456789","Thái Bình",1));
-                db.memberDao().insert(new Member(2,"Nguyễn Văn B", "2000-02-02","024020001102","file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg","0123456789","Bắc Cạn",2));
-                db.memberDao().insert(new Member(3,"Nguyễn Văn C", "2000-03-04","024020001103","file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg","0123456789","Bắc Giang",3));
-                db.memberDao().insert(new Member(4,"Nguyễn Văn D", "2000-04-03","024020001104","file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg","0123456789","Bắc Ninh",4));
-                db.memberDao().insert(new Member(5,"Nguyễn Văn E", "2000-05-05","024020001105","file:///storage/emulated/0/DCIM/Camera/IMG_20221115_085810.jpg","0123456789","Hà Nội",5));
+                db.memberDao().insert(new Member(1,"Nguyễn Văn A", "2000-01-01","024020001101","file:///storage/emulated/0/Pictures/avatar1.jpg","0123456789","Thái Bình",1));
+                db.memberDao().insert(new Member(2,"Nguyễn Văn B", "2000-02-02","024020001102","file:///storage/emulated/0/Pictures/avatar2.jpg","0123456789","Bắc Cạn",2));
+                db.memberDao().insert(new Member(3,"Nguyễn Văn C", "2000-03-04","024020001103","file:///storage/emulated/0/Pictures/avatar3.jpg","0123456789","Bắc Giang",3));
+                db.memberDao().insert(new Member(4,"Nguyễn Văn D", "2000-04-03","024020001104","file:///storage/emulated/0/Pictures/avatar4.jpg","0123456789","Bắc Ninh",4));
+                db.memberDao().insert(new Member(5,"Nguyễn Văn E", "2000-05-05","024020001105","file:///storage/emulated/0/Pictures/avatar5.jpg","0123456789","Hà Nội",5));
 
                 //10.ServiceDetail
                 db.serviceDetailDao().insert(new ServiceDetail(1,1,"2022-10-17",1));

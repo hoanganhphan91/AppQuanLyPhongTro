@@ -30,7 +30,7 @@ public class RoomManageActivity extends AppCompatActivity {
         binding = ActivityRoomManageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         db = DbMotel.getInstance(this);
-
+        binding.imgBack.setOnClickListener(view -> finish());
         listRoom = db.roomDao().getAll();
         listFloor = new ArrayList<>();
         subListRoom();

@@ -182,7 +182,7 @@ public class MemberFragment extends Fragment {
     }
 
     private void handleAddMember() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(),R.style.CustomAlertDialog);
         DialogMemberBinding bindingMember = DialogMemberBinding.inflate(getLayoutInflater());
         builder.setView(bindingMember.getRoot());
         AlertDialog dialog = builder.create();

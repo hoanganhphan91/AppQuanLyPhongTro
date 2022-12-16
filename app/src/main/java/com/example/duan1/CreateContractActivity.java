@@ -53,6 +53,7 @@ public class CreateContractActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_create_contract);
         db = DbMotel.getInstance(this);
+        binding.imgBack.setOnClickListener(view -> finish());
         Intent intent = getIntent();
         Room room = (Room) intent.getSerializableExtra("room");
         RoomType roomType = db.roomTypeDao().getRoomTypeById(room.getIdRoomType());
@@ -149,7 +150,7 @@ public class CreateContractActivity extends AppCompatActivity {
     }
 
     private void handleAddMember() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.CustomAlertDialog);
         DialogMemberBinding bindingMember = DialogMemberBinding.inflate(getLayoutInflater());
         builder.setView(bindingMember.getRoot());
         AlertDialog dialog = builder.create();
