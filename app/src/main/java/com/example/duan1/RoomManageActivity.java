@@ -54,9 +54,9 @@ public class RoomManageActivity extends AppCompatActivity {
             listRoom.clear();
             String keyword = binding.edSearch.getText().toString();
             if(b){
-                listRoom.addAll(db.roomDao().filterRoom("%" + keyword + "%"));
+                listRoom.addAll(db.roomDao().filterRoom("%" + binding.edSearch.getText().toString() + "%"));
             }else {
-                listRoom.addAll(db.roomDao().searchRoom("%" + keyword + "%"));
+                listRoom.addAll(db.roomDao().searchRoom("%" + binding.edSearch.getText().toString() + "%"));
             }
             subListRoom();
             floorAdapter.notifyDataSetChanged();

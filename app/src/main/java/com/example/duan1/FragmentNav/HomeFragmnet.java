@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.duan1.AccountManagerActivity;
 import com.example.duan1.ContractManageActivity;
 import com.example.duan1.R;
@@ -43,6 +44,8 @@ public class HomeFragmnet extends Fragment {
         Account account = sessionAccount.fetchAccount();
         binding.tvName.setText(account.getName().trim());
         binding.tvPos.setText(account.getTitle().trim());
-        binding.ImageAvatar.setImageURI(Uri.parse(account.getImage()));
+        Glide.with(getContext()).load(Uri.parse(account.getImage())).into(binding.ImageAvatar);
+        if (account.getTitle().equals("manage"))
+            binding.createAccount.setVisibility(View.INVISIBLE);
     }
 }

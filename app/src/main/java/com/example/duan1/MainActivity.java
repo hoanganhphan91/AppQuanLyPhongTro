@@ -5,7 +5,6 @@ import android.app.Application;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -37,6 +36,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     DbMotel db;
+    ActivityResultLauncher<String[]> permissionRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
                 db.roomDao().insert(new Room("P303", 3,"Phòng sạch sẽ thoáng mát" ,"", 4 ));
 
                 //7. Contract
-                db.contractDao().insert(new Contract(1, "2022-10-15", "2023-05-15", 1,"P101"));
-                db.contractDao().insert(new Contract(2, "2021-11-15", "2022-05-15", 1,"P102"));
+                db.contractDao().insert(new Contract(1, "2022-10-15", "2022-11-15", 1,"P101"));
+                db.contractDao().insert(new Contract(2, "2021-09-15", "2022-10-15", 1,"P102"));
                 db.contractDao().insert(new Contract(3, "2022-11-15", "2023-05-15", 1,"P201"));
                 db.contractDao().insert(new Contract(4, "2022-11-15", "2023-05-15", 1,"P202"));
                 db.contractDao().insert(new Contract(5, "2022-11-15", "2023-05-15", 1,"P301"));
@@ -190,4 +190,5 @@ public class MainActivity extends AppCompatActivity {
         .setPermissions(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE)
         .check();
     }
+
 }

@@ -52,16 +52,11 @@ public abstract class DbMotel extends RoomDatabase {
         }
         return instance;
     }
-
-
     public SQLiteDatabase getReadableDatabase() {
         return null;
     }
 
     public Boolean updatepassword(String password) {
-
-
-
         return null;
     }
 }

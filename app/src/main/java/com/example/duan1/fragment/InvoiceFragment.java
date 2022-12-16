@@ -61,7 +61,6 @@ public class InvoiceFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentInvoiceBinding.inflate(inflater,container,false);
         return binding.getRoot();
-
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -109,8 +108,10 @@ public class InvoiceFragment extends Fragment {
                     invoice.setStatus(1);
                     db.invoiceDao().update(invoice);
                     Toast.makeText(getContext(), "Thanh toán thành công!", Toast.LENGTH_SHORT).show();
-                    invoiceList.set(position,invoice);
-                    adapter.notifyDataSetChanged();
+                    Invoice invoiceTemp = new Invoice(invoice.getNewPowerIndicator(),invoice.getNewWaterIndex(),2,contract.getIdContract(),account.getUsername());
+                    db.invoiceDao().insert(invoiceTemp);
+                    invoiceTemp = db.invoiceDao().getInvoiceNow(contract.getIdContract());
+                    model.setInvoice(invoiceTemp);
                     dialogInterface.cancel();
                 });
                 builder.setNegativeButton("Hủy",(dialogInterface, i) -> dialogInterface.cancel());
@@ -235,6 +236,4 @@ public class InvoiceFragment extends Fragment {
             total +=binding2.getWater();
        binding2.setTotal(total);
     }
-
-
 }

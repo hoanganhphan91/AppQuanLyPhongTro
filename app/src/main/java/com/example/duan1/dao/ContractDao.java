@@ -24,7 +24,24 @@ public interface ContractDao {
     Contract getContractNewest();
     @Query("select*from Contract where roomCode = :roomCode and status = 1 limit 1")
     Contract getContractByRoomCode(String roomCode);
-
     @Query("select*from Contract where idContract = :idContract limit 1")
     Contract getContractById(int idContract);
+
+    @Query("select*from Contract where status = 1 and endingDate <= :date and roomCode like :keyword")
+    List<Contract> getSearchWait(String date, String keyword);
+
+    @Query("select*from Contract where status = 1 and endingDate<= :date and roomCode like :keyword and statingDate >= :date2 and endingDate <= :date2")
+    List<Contract> getSearchFilterWait(String date, String date2, String keyword);
+
+    @Query("select*from Contract where status = 1 and endingDate > :date and roomCode like :keyword")
+    List<Contract> getSearchEffect(String date, String keyword);
+
+    @Query("select*from Contract where status = 1 and endingDate > :date and roomCode like :keyword and statingDate >= :date2 and endingDate <= :date2")
+    List<Contract> getSearchFilterEffect(String date, String date2, String keyword);
+
+    @Query("select*from Contract where status = 0 and roomCode like :keyword")
+    List<Contract> getSearchExpire(String keyword);
+
+    @Query("select*from Contract where status = 0 and roomCode like :keyword and statingDate >= :date2 and endingDate <= :date2")
+    List<Contract> getSearchFilterExpire(String date2, String keyword);
 }

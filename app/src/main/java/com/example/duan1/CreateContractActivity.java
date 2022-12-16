@@ -122,7 +122,7 @@ public class CreateContractActivity extends AppCompatActivity {
         builder.setView(bindingDialog.getRoot());
         AlertDialog dialog = builder.create();
         bindingDialog.setMember(member);
-        bindingDialog.imgAvatar.setImageURI(Uri.parse(member.getImage()));
+        Glide.with(this).load(Uri.parse(member.getImage())).into(bindingDialog.imgAvatar);
         bindingDialog.btnClose.setOnClickListener(view -> dialog.dismiss());
         dialog.show();
     }
@@ -143,12 +143,7 @@ public class CreateContractActivity extends AppCompatActivity {
 
         contract.setEndingDate(endDate);
         Invoice invoice = new Invoice(electronic,water,2,contract.getIdContract(),account.getUsername());
-        try {
-            db.invoiceDao().insert(invoice);
-        }catch (Exception e){
-            Toast.makeText(this, "Lỗi tạo hóa đơn", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
+        db.invoiceDao().insert(invoice);
         startActivity(new Intent(this,RoomManageActivity.class));
         Toast.makeText(this, "Tạo hợp đồng thành công!", Toast.LENGTH_SHORT).show();
     }

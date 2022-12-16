@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.duan1.adapter.Member2Adapter;
 import com.example.duan1.database.DbMotel;
+import com.example.duan1.model.Contract;
 import com.example.duan1.model.Member;
 
 import java.util.List;
@@ -32,20 +33,16 @@ public class ShowMemberContract extends AppCompatActivity {
         btn_back_contract = findViewById(R.id.btn_back_contract);
         rcv = findViewById(R.id.rcvHopDong);
         db = DbMotel.getInstance(this);
-        int idPhong = getIntent().getIntExtra("id",0);
-        String statingDate = getIntent().getStringExtra("statingDate");
-        String endingDate = getIntent().getStringExtra("endingDate");
-        String status = getIntent().getStringExtra("status");
-        String roomCode = getIntent().getStringExtra("roomCode");
-        List<Member> memberList = db.memberDao().getMemberByIdContract(idPhong);
+        Contract contract = (Contract) getIntent().getSerializableExtra("contract");
+        List<Member> memberList = db.memberDao().getMemberByIdContract(contract.getIdContract());
         Member2Adapter adapter = new Member2Adapter(this, memberList);
         rcv.setLayoutManager(new LinearLayoutManager(this));
         rcv.setAdapter(adapter);
-        id_phong.setText(idPhong+"");
-        id_clock_start.setText(statingDate);
-        id_clock_stop.setText(endingDate);
-        id_contract.setText(status);
-        id_room.setText(roomCode);
+        id_phong.setText(contract.getIdContract()+"");
+        id_clock_start.setText(contract.getStatingDate());
+        id_clock_stop.setText(contract.getEndingDate());
+        id_contract.setText(contract.getStatus()==1?"hiệu lực":"hết hạn");
+        id_room.setText(contract.getRoomCode());
 
         btn_back_contract.setOnClickListener(new View.OnClickListener() {
             @Override

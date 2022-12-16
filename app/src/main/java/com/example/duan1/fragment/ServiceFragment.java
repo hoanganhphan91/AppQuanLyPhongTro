@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,7 @@ public class ServiceFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         this.db = DbMotel.getInstance(getContext());
         listSevice = db.serviceDao().getAll();
+        Log.i("servi", "onViewCreated: " + listSevice.size() );
         binding.rvService.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         binding.rvDetail.setLayoutManager(new LinearLayoutManager(getContext()));
         //Total viewmodel
@@ -72,6 +74,7 @@ public class ServiceFragment extends Fragment {
         if(invoice == null)
             return;
         listServiceDetail = db.serviceDetailDao().getServiceDetailByIdInvoidce(invoice.getIdInvoice());
+        Log.d("Detail", "handleObserve: " + listServiceDetail.size());
         detailAdapter = new ServiceDetailAdapter(getContext(), listServiceDetail, new IClickItemServiceDetail() {
             @Override
             public void onClickDelete(ServiceDetail serviceDetail, int i) {

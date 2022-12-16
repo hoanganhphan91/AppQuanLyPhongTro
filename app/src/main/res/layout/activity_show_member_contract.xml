@@ -15,8 +15,8 @@
             android:orientation="horizontal"
             >
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:src="@drawable/ic_people"/>
 
             <TextView
@@ -34,8 +34,8 @@
             android:orientation="horizontal"
             >
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:src="@drawable/ic_clock_start"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -51,8 +51,8 @@
             android:orientation="horizontal"
             >
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:src="@drawable/ic_clock_stop"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -65,11 +65,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:src="@drawable/ic_contract"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -79,24 +78,25 @@
                 android:paddingLeft="10dp"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:baselineAligned="false"
+            android:src="@drawable/ic_room" />
+
+        <TextView
+            android:id="@+id/id_room"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_room"/>
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp" />
 
-            <TextView
-                android:id="@+id/id_room"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingTop="4dp" />
-
-        </LinearLayout>
+    </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
