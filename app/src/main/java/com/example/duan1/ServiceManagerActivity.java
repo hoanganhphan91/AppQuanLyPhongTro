@@ -30,15 +30,11 @@ public class ServiceManagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_manager);
         binding = ActivityServiceManagerBinding.inflate(getLayoutInflater());
-        binding.toolbar.setTitle("Dịch Vụ");
-
         setContentView(binding.getRoot());
-        setSupportActionBar(binding.toolbar);
         db = DbMotel.getInstance(this);
         serviceList = db.serviceDao().getAll();
-
         loaddata();
-
+        binding.imgBack.setOnClickListener(view -> finish());
         binding.floatAddService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

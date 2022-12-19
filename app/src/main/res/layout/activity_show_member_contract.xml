@@ -15,16 +15,17 @@
             android:orientation="horizontal"
             >
             <ImageView
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/ic_people"/>
 
             <TextView
                 android:id="@+id/id_phong"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingTop="4dp" />
+                android:layout_height="@dimen/_20sdp"
+                android:textSize="@dimen/_11ssp"
+                android:gravity="center|start"
+                android:paddingLeft="@dimen/_3sdp"/>
         </LinearLayout>
 
 
@@ -34,15 +35,16 @@
             android:orientation="horizontal"
             >
             <ImageView
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/ic_clock_start"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/id_clock_start"
-                android:paddingTop="4dp"
-                android:paddingLeft="10dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:textSize="@dimen/_11ssp"
+                android:gravity="center|start"
+                android:paddingLeft="@dimen/_3sdp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -51,15 +53,16 @@
             android:orientation="horizontal"
             >
             <ImageView
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/ic_clock_stop"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/id_clock_stop"
-                android:paddingTop="4dp"
-                android:paddingLeft="10dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:textSize="@dimen/_11ssp"
+                android:gravity="center|start"
+                android:paddingLeft="@dimen/_3sdp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -67,15 +70,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/ic_contract"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/id_contract"
-                android:paddingTop="4dp"
-                android:paddingLeft="10dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:textSize="@dimen/_11ssp"
+                android:gravity="center|start"
+                android:paddingLeft="@dimen/_3sdp"/>/>
         </LinearLayout>
 
     <LinearLayout
@@ -84,17 +88,18 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_20sdp"
             android:baselineAligned="false"
             android:src="@drawable/ic_room" />
 
         <TextView
             android:id="@+id/id_room"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="4dp" />
+            android:layout_height="@dimen/_20sdp"
+            android:textSize="@dimen/_11ssp"
+            android:gravity="center|start"
+            android:paddingLeft="@dimen/_3sdp"/> />
 
     </LinearLayout>
 
@@ -102,11 +107,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Danh sách hành viên"
-            android:textSize="25sp"
+            android:textSize="@dimen/_14ssp"
             android:textStyle="bold"
-            android:textColor="#CC000000"
-            android:padding="20dp"
-            />
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:textColor="#CC000000"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvHopDong"

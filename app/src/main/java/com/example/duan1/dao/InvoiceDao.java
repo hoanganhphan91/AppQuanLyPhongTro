@@ -21,7 +21,7 @@ public interface InvoiceDao {
     @Query("select*from Invoice")
     List<Invoice> getAll();
     //get invoice temp
-    @Query("select*from Invoice where status = 2 and idContract = :idContract limit 1")
+    @Query("select*from Invoice where status = 2 and idContract = :idContract order by date limit 1 ")
     Invoice getInvoiceNow(int idContract);
     //get List Invoice by idContract
     @Query("select*from Invoice where idContract = :idContract and status in (0,1) order by status ,date desc")

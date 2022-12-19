@@ -27,12 +27,10 @@ public class AccountManagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_manager);
         binding = ActivityAccountManagerBinding.inflate(getLayoutInflater());
-        binding.toolbar.setTitle("Tài Khoản");
         setContentView(binding.getRoot());
-        setSupportActionBar(binding.toolbar);
+        binding.imgBack.setOnClickListener(view -> finish());
         dbMotel = DbMotel.getInstance(this);
         accountList = dbMotel.accountDao().getAll();
-
         loaddata();
         binding.floatAddAccount.setOnClickListener(new View.OnClickListener() {
             @Override

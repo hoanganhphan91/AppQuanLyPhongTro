@@ -49,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
         try {
             if(db.accountDao().getAll().size() == 0){
                 //1. insert account
-                db.accountDao().insert(new Account("admin","admin","Nguyễn Văn A","0123456789","host",""));
-                db.accountDao().insert(new Account("user1","user1","Nguyễn Văn B","0123456789","manager",""));
-                db.accountDao().insert(new Account("user2","user2","Nguyễn Văn C","0123456789","manager",""));
-                db.accountDao().insert(new Account("user3","user3","Nguyễn Văn D","0123456789","manager",""));
-                db.accountDao().insert(new Account("user4","user4","Nguyễn Văn E","0123456789","manager",""));
+                db.accountDao().insert(new Account("admin","admin","Nguyễn Văn A","0123456789","host","file:///storage/emulated/0/Pictures/avatar3.jpg"));
+                db.accountDao().insert(new Account("user1","user1","Nguyễn Văn B","0123456789","manager","file:///storage/emulated/0/Pictures/avatar2.jpg"));
+                db.accountDao().insert(new Account("user2","user2","Nguyễn Văn C","0123456789","manager","file:///storage/emulated/0/Pictures/avatar1.jpg"));
+                db.accountDao().insert(new Account("user3","user3","Nguyễn Văn D","0123456789","manager","file:///storage/emulated/0/Pictures/avatar4.jpg"));
+                db.accountDao().insert(new Account("user4","user4","Nguyễn Văn E","0123456789","manager","file:///storage/emulated/0/Pictures/avatar5.jpg"));
 
                 //2. insert utility
                 db.utilityDao().insert(new Utility(1,"cần đặt cọc",""));
@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
                 //3. Service
                 db.serviceDao().insert(new Service(1,"bình nước",15000,"file:///storage/emulated/0/Pictures/binh_nuoc.png"));
-                db.serviceDao().insert(new Service(2,"mỳ tôm trứng",15000,"file:///storage/emulated/0/Pictures/my_tom_trung.png"));
+                db.serviceDao().insert(new Service(2,"mỳ tôm trứng",20000,"file:///storage/emulated/0/Pictures/my_tom_trung.png"));
                 db.serviceDao().insert(new Service(3,"bánh mỳ trứng",15000,"file:///storage/emulated/0/Pictures/banh_my_trung.png"));
-                db.serviceDao().insert(new Service(4,"bình gas",15000,"file:///storage/emulated/0/Pictures/binh_gas.png"));
-                db.serviceDao().insert(new Service(5,"mỳ xào",15000,"file:///storage/emulated/0/Pictures/my_xao.png"));
+                db.serviceDao().insert(new Service(4,"bình gas",315000,"file:///storage/emulated/0/Pictures/binh_gas.png"));
+                db.serviceDao().insert(new Service(5,"mỳ xào",30000,"file:///storage/emulated/0/Pictures/my_xao.png"));
 
                 //4. RoomType
                 db.roomTypeDao().insert(new RoomType(1,"Loại 1", 1500000,10, 3500,20000));
@@ -113,19 +113,30 @@ public class MainActivity extends AppCompatActivity {
                 db.roomDao().insert(new Room("P101", 1,"Phòng sạch sẽ thoáng mát" ,"", 1 ));
                 db.roomDao().insert(new Room("P102", 1,"Phòng sạch sẽ thoáng mát" ,"", 2 ));
                 db.roomDao().insert(new Room("P103", 1,"Phòng sạch sẽ thoáng mát","" , 1 ));
+                db.roomDao().insert(new Room("P104", 1,"Phòng sạch sẽ thoáng mát","" , 1 ));
                 db.roomDao().insert(new Room("P201", 2,"Phòng sạch sẽ thoáng mát","" , 3 ));
                 db.roomDao().insert(new Room("P202", 2,"Phòng sạch sẽ thoáng mát" ,"", 4 ));
                 db.roomDao().insert(new Room("P203", 2,"Phòng sạch sẽ thoáng mát","" , 2 ));
+                db.roomDao().insert(new Room("P204", 2,"Phòng sạch sẽ thoáng mát","" , 2 ));
                 db.roomDao().insert(new Room("P301", 3,"Phòng sạch sẽ thoáng mát","" , 5 ));
                 db.roomDao().insert(new Room("P302", 3,"Phòng sạch sẽ thoáng mát","" , 3 ));
                 db.roomDao().insert(new Room("P303", 3,"Phòng sạch sẽ thoáng mát" ,"", 4 ));
+                db.roomDao().insert(new Room("P304", 3,"Phòng sạch sẽ thoáng mát" ,"", 4 ));
 
                 //7. Contract
                 db.contractDao().insert(new Contract(1, "2022-10-15", "2022-11-15", 1,"P101"));
-                db.contractDao().insert(new Contract(2, "2021-09-15", "2022-10-15", 1,"P102"));
-                db.contractDao().insert(new Contract(3, "2022-11-15", "2023-05-15", 1,"P201"));
-                db.contractDao().insert(new Contract(4, "2022-11-15", "2023-05-15", 1,"P202"));
-                db.contractDao().insert(new Contract(5, "2022-11-15", "2023-05-15", 1,"P301"));
+                db.contractDao().insert(new Contract(2, "2021-11-16", "2022-10-15", 0,"P101"));
+                db.contractDao().insert(new Contract(3, "2021-04-16", "2021-11-15", 0,"P101"));
+                db.contractDao().insert(new Contract(4, "2021-01-01", "2021-04-15", 0,"P101"));
+                db.contractDao().insert(new Contract(5, "2021-09-15", "2022-10-15", 1,"P102"));
+                db.contractDao().insert(new Contract(6, "2022-10-15", "2022-11-15", 1,"P103"));
+                db.contractDao().insert(new Contract(7, "2022-11-15", "2023-05-15", 1,"P201"));
+                db.contractDao().insert(new Contract(8, "2022-11-15", "2023-05-15", 1,"P202"));
+                db.contractDao().insert(new Contract(9, "2022-01-15", "2022-05-15", 0,"P203"));
+                db.contractDao().insert(new Contract(10, "2021-01-15", "2022-01-15", 0,"P203"));
+                db.contractDao().insert(new Contract(11, "2022-11-15", "2023-05-15", 1,"P301"));
+                db.contractDao().insert(new Contract(12, "2022-01-15", "2022-05-15", 0,"P302"));
+                db.contractDao().insert(new Contract(13, "2022-01-15", "2022-05-15", 0,"P303"));
 
                 //8. Invoice
                 db.invoiceDao().insert(new Invoice(1,"2022-10-15",0,10,0,120,"",0,0,0,1,"admin"));
@@ -138,10 +149,13 @@ public class MainActivity extends AppCompatActivity {
 
                 //9. Member
                 db.memberDao().insert(new Member(1,"Nguyễn Văn A", "2000-01-01","024020001101","file:///storage/emulated/0/Pictures/avatar1.jpg","0123456789","Thái Bình",1));
-                db.memberDao().insert(new Member(2,"Nguyễn Văn B", "2000-02-02","024020001102","file:///storage/emulated/0/Pictures/avatar2.jpg","0123456789","Bắc Cạn",2));
-                db.memberDao().insert(new Member(3,"Nguyễn Văn C", "2000-03-04","024020001103","file:///storage/emulated/0/Pictures/avatar3.jpg","0123456789","Bắc Giang",3));
-                db.memberDao().insert(new Member(4,"Nguyễn Văn D", "2000-04-03","024020001104","file:///storage/emulated/0/Pictures/avatar4.jpg","0123456789","Bắc Ninh",4));
-                db.memberDao().insert(new Member(5,"Nguyễn Văn E", "2000-05-05","024020001105","file:///storage/emulated/0/Pictures/avatar5.jpg","0123456789","Hà Nội",5));
+                db.memberDao().insert(new Member(2,"Nguyễn Văn B", "2000-01-01","024020001101","file:///storage/emulated/0/Pictures/avatar6.jpg","0123456789","Thái Bình",1));
+                db.memberDao().insert(new Member(3,"Nguyễn Văn C", "2000-01-01","024020001101","file:///storage/emulated/0/Pictures/avatar3.jpg","0123456789","Thái Bình",1));
+                db.memberDao().insert(new Member(4,"Nguyễn Văn D", "2000-01-01","024020001101","file:///storage/emulated/0/Pictures/avatar4.jpg","0123456789","Thái Bình",1));
+                db.memberDao().insert(new Member(5,"Nguyễn Văn B", "2000-02-02","024020001102","file:///storage/emulated/0/Pictures/avatar2.jpg","0123456789","Bắc Cạn",2));
+                db.memberDao().insert(new Member(6,"Nguyễn Văn C", "2000-03-04","024020001103","file:///storage/emulated/0/Pictures/avatar3.jpg","0123456789","Bắc Giang",3));
+                db.memberDao().insert(new Member(7,"Nguyễn Văn D", "2000-04-03","024020001104","file:///storage/emulated/0/Pictures/avatar4.jpg","0123456789","Bắc Ninh",4));
+                db.memberDao().insert(new Member(8,"Nguyễn Văn E", "2000-05-05","024020001105","file:///storage/emulated/0/Pictures/avatar5.jpg","0123456789","Hà Nội",5));
 
                 //10.ServiceDetail
                 db.serviceDetailDao().insert(new ServiceDetail(1,1,"2022-10-17",1));

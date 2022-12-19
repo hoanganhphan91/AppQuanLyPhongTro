@@ -1,5 +1,7 @@
 package com.example.duan1.adapter;
 
+import static com.example.duan1.base.BaseCheckValid.checkEmptyString;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
@@ -34,12 +36,8 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
     Context context;
     List<Service> list;
     ImageView imageViewEdit;
-    Service service;
-    String strimage;
+    String strimage="";
     DbMotel dbMotel;
-
-
-
     public ServiceAdapter(Context context, List<Service> list) {
         this.context = context;
         this.list = list;
@@ -53,10 +51,8 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-      Service  service = list.get(position);
+        Service  service = list.get(position);
         dbMotel = DbMotel.getInstance(context);
-//        holder.binding.imageService.setImageURI(Uri.parse("file:///storage/emulated/0/DCIM/Camera/IMG_20221123_211745.jpg"));
-
         try{
             holder.binding.imageService.setImageURI(Uri.parse(service.getImage().trim()));
         }catch (Exception e){
@@ -64,9 +60,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         }
         holder.binding.tvService.setText(service.getName());
         holder.binding.priceService.setText(String.valueOf(service.getPrice())+" VND");
-        holder.binding.imageService.setImageURI(Uri.parse(service.getImage()));
-
-//        Glide.with(context).load(service.getImage()).into(holder.binding.imageService);
+        Glide.with(context).load(Uri.parse(service.getImage())).into(holder.binding.imageService);
         holder.binding.imvDelete.setOnClickListener(v -> {
             try {
                 dbMotel.serviceDao().delete(service);
@@ -81,7 +75,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         holder.binding.imgEdit.setOnClickListener(v -> {
             this.notifyItemChanged(position);
             showDialogEdit(service,position);
-
         });
     }
 
@@ -100,8 +93,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         }
     }
     public void showDialogEdit(Service service, int position){
-
-
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater layoutInflater = ((Activity)context).getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.dialog_edit_service,null);
@@ -127,8 +118,9 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
                 String strImage = strimage;
                 service.setName(editDV);
                 service.setPrice(editPrice);
-                service.setImage(strImage);
-
+                if(checkEmptyString(strImage)){
+                    service.setImage(strImage);
+                }
                 dbMotel.serviceDao().update(service);
                 list.set(position,service);
 
@@ -151,11 +143,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
                 });
             }
 
-
-
     private void loadData(){
-
-
         notifyDataSetChanged();
     }
 }
