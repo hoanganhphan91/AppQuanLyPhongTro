@@ -20,6 +20,11 @@ public interface InvoiceDao {
     void delete(Invoice o);
     @Query("select*from Invoice")
     List<Invoice> getAll();
+
+
+    @Query("SELECT * FROM Invoice WHERE date >= :startDate AND date <= :endDate")
+    List<Invoice> getInvoicesBetweenDates(String startDate, String endDate);
+
     //get invoice temp
     @Query("select*from Invoice where status = 2 and idContract = :idContract order by date limit 1 ")
     Invoice getInvoiceNow(int idContract);

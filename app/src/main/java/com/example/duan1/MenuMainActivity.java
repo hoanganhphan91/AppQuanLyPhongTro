@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import com.example.duan1.FragmentNav.HomeFragmnet;
 import com.example.duan1.FragmentNav.InfoAccount;
 import com.example.duan1.FragmentNav.rePassAccount;
+import com.example.duan1.FragmentNav.DoanhThuFragment;
 import com.learnoset.material.ui.learnosetnavigationbar.LearnosetNavItem;
 import com.learnoset.material.ui.learnosetnavigationbar.LearnosetNavigationBar;
 import com.learnoset.material.ui.learnosetnavigationbar.NavigationEventListener;
@@ -50,14 +51,16 @@ public class MenuMainActivity extends AppCompatActivity {
         profileItem.setFragment(new InfoAccount(), R.id.fragmentcontainer);
         navigationBar.addNavItem(profileItem);
 
+
         LearnosetNavItem rePassItem = new LearnosetNavItem();
         rePassItem.setTitle("Đổi Mật Khẩu");
         rePassItem.setIcon(com.learnoset.learnosetbottombar.R.drawable.privacy_policy_icon);
         rePassItem.setFragment(new rePassAccount(), R.id.fragmentcontainer);
         navigationBar.addNavItem(rePassItem);
 
-        navigationBar.setTheme(LearnosetNavigationBar.NavThemes.LIGHT);
-        navigationBar.setSelectedItemBackground(LearnosetNavigationBar.NavColors.ORANGE);
+
+
+
         navigationBar.setEventListener(new NavigationEventListener() {
             @Override
             public void onItemSelected(int position, LearnosetNavItem selectedNavItem) {
@@ -73,7 +76,7 @@ public class MenuMainActivity extends AppCompatActivity {
         });
         navigationBar.setDrawerLayout(drawerLayout, LearnosetNavigationBar.DrawerGravity.LEFT);
 
-        navigationBar.setHeaderData("JASON", R.drawable.banh_my_trung);
+        navigationBar.setHeaderData("Quản Trị", R.drawable.banh_my_trung);
         imgNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

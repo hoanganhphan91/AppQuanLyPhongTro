@@ -43,8 +43,8 @@
                     android:text="Ngày bắt đầu:"
                     android:textSize="@dimen/_10ssp"/>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_30sdp"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
                     android:gravity="center"
                     android:text="Ngày hết hạn:"
                     android:textSize="@dimen/_10ssp"/>
@@ -55,8 +55,8 @@
                     android:text="Phòng:"
                     android:textSize="@dimen/_10ssp"/>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_30sdp"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
                     android:gravity="center"
                     android:text="Số ngày còn lại:"
                     android:textSize="@dimen/_10ssp"/>
@@ -113,8 +113,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnExtension"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_26sdp"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
                 android:background="@drawable/btn_orange"
                 android:text="Gia hạn"
                 android:textSize="@dimen/_11ssp"

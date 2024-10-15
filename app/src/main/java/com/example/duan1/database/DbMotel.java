@@ -32,16 +32,7 @@ import com.example.duan1.model.UtilityDetail;
         RoomType.class, Service.class, ServiceDetail.class, Utility.class, UtilityDetail.class},
         version = 2, exportSchema = false)
 public abstract class DbMotel extends RoomDatabase {
-    public abstract AccountDao accountDao();
-    public abstract ContractDao contractDao();
-    public abstract InvoiceDao invoiceDao();
-    public abstract MemberDao memberDao();
-    public abstract RoomDao roomDao();
-    public abstract RoomTypeDao roomTypeDao();
-    public abstract ServiceDao serviceDao();
-    public abstract ServiceDetailDao serviceDetailDao();
-    public abstract UtilityDao utilityDao();
-    public abstract UtilityDetailDao utilityDetailDao();
+
 
     private static final String DB_NAME = "motel.db";
     private static DbMotel instance;
@@ -59,4 +50,15 @@ public abstract class DbMotel extends RoomDatabase {
     public Boolean updatepassword(String password) {
         return null;
     }
+
+    public abstract AccountDao accountDao();
+    public abstract ContractDao contractDao();
+    public abstract InvoiceDao invoiceDao();
+    public abstract MemberDao memberDao();
+    public abstract RoomDao roomDao();
+    public abstract RoomTypeDao roomTypeDao();
+    public abstract ServiceDao serviceDao();
+    public abstract ServiceDetailDao serviceDetailDao();
+    public abstract UtilityDao utilityDao();
+    public abstract UtilityDetailDao utilityDetailDao();
 }

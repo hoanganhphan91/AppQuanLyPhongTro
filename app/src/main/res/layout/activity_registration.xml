@@ -13,7 +13,7 @@
         android:layout_height="@dimen/_150sdp"
         android:layout_marginTop="@dimen/_6sdp"
         android:layout_gravity="center|top"
-        app:srcCompat="@drawable/logo"/>
+        app:srcCompat="@drawable/logo2x"/>
 
     <TextView
         android:layout_width="match_parent"

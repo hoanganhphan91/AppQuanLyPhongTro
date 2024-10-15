@@ -42,16 +42,13 @@
                     android:padding="@dimen/_5sdp"
                     app:srcCompat="@drawable/ic_clock_start" />
 
-                <ImageView
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:padding="@dimen/_5sdp"
-                    app:srcCompat="@drawable/ic_clock_stop" />
+
 
                 <ImageView
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
                     android:padding="@dimen/_5sdp"
+
                     app:srcCompat="@drawable/ic_checked" />
             </LinearLayout>
 
@@ -89,10 +86,11 @@
                     android:textSize="@dimen/_11ssp" />
 
                 <TextView
+                    android:layout_marginTop="-30dp"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_25sdp"
                     android:gravity="start|center"
-                    android:text='@{contract.status == 1?"đang hiệu lực":"hết hạn"}'
+                    android:text='@{contract.status == 1?" hiệu lực":"hết hạn"}'
                     android:textSize="@dimen/_11ssp" />
             </LinearLayout>
         </LinearLayout>
@@ -115,8 +113,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnExtension"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
             android:background="@drawable/btn_orange"
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp"

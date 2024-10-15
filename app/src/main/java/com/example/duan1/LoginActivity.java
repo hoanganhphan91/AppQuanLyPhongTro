@@ -14,7 +14,8 @@ import com.example.duan1.databinding.ActivityLoginBinding;
 import com.example.duan1.model.Account;
 import com.example.duan1.model.SessionAccount;
 
-public class LoginActivity extends AppCompatActivity {
+public class
+LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     DbMotel db ;
     TextView tvquenmatkhau;

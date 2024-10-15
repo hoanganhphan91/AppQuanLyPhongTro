@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.example.duan1.AccountManagerActivity;
 import com.example.duan1.ContractManageActivity;
-import com.example.duan1.R;
+import com.example.duan1.RevenueActivity;
 import com.example.duan1.RoomManageActivity;
 import com.example.duan1.ServiceManagerActivity;
 import com.example.duan1.databinding.FragmentHomeFragmnetBinding;
@@ -40,12 +40,12 @@ public class HomeFragmnet extends Fragment {
         binding.roomManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), RoomManageActivity.class)));
         binding.seviceManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), ServiceManagerActivity.class)));
         binding.createAccount.setOnClickListener(v -> startActivity(new Intent(view.getContext(), AccountManagerActivity.class)));
+        binding.quanLyDoanhThu.setOnClickListener(v -> startActivity(new Intent(view.getContext(), RevenueActivity.class)));
         sessionAccount = new SessionAccount(getContext());
         Account account = sessionAccount.fetchAccount();
         binding.tvName.setText(account.getName().trim());
         binding.tvPos.setText(account.getTitle().trim());
         Glide.with(getContext()).load(Uri.parse(account.getImage())).into(binding.ImageAvatar);
-        if (!account.getTitle().equals("host"))
-            binding.createAccount.setVisibility(View.INVISIBLE);
+      
     }
 }

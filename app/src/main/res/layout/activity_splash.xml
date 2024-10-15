@@ -20,23 +20,24 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp"
-        android:src="@drawable/logosplash"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo2x"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="#F7941D" />
+        app:tint="#000000" />
 
     <ImageView
         android:id="@+id/logowhite"
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp"
-        android:src="@drawable/logosplash"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo2x"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+        />
+
 </androidx.constraintlayout.motion.widget.MotionLayout>

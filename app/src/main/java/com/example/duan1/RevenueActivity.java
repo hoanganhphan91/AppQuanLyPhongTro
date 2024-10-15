@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class DoanhThuActivity extends AppCompatActivity {
+public class RevenueActivity extends AppCompatActivity {
 
     List<Invoice> invoiceList;
     DbMotel db;
@@ -57,7 +57,7 @@ public class DoanhThuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doanh_thu);
+        setContentView(R.layout.activity_revenue);
 
         db = DbMotel.getInstance(this);
 
