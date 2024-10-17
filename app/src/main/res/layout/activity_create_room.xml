@@ -215,7 +215,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_30sdp"
-                    android:text="Tầng :"
+                    android:text="Dãy :"
                     android:gravity="center|start"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10ssp" />
@@ -249,7 +249,7 @@
                     android:paddingStart="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:layout_marginBottom="@dimen/_2sdp"
-                    android:hint="Nhập số tầng "
+                    android:hint="Nhập số Dãy "
                     android:inputType="number"
                     android:textSize="@dimen/_10ssp"
                     android:background="@drawable/border_edit_orange" />
