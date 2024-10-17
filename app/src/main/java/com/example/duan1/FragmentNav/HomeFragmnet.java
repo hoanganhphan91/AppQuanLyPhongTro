@@ -36,16 +36,16 @@ public class HomeFragmnet extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.contractManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), ContractManageActivity.class)));
+//        binding.contractManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), ContractManageActivity.class)));
         binding.roomManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), RoomManageActivity.class)));
-        binding.seviceManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), ServiceManagerActivity.class)));
-        binding.createAccount.setOnClickListener(v -> startActivity(new Intent(view.getContext(), AccountManagerActivity.class)));
+//        binding.seviceManage.setOnClickListener(v -> startActivity(new Intent(view.getContext(), ServiceManagerActivity.class)));
+//        binding.createAccount.setOnClickListener(v -> startActivity(new Intent(view.getContext(), AccountManagerActivity.class)));
         sessionAccount = new SessionAccount(getContext());
         Account account = sessionAccount.fetchAccount();
         binding.tvName.setText(account.getName().trim());
         binding.tvPos.setText(account.getTitle().trim());
         Glide.with(getContext()).load(Uri.parse(account.getImage())).into(binding.ImageAvatar);
-        if (!account.getTitle().equals("host"))
-            binding.createAccount.setVisibility(View.INVISIBLE);
+//        if (!account.getTitle().equals("host"))
+//            binding.createAccount.setVisibility(View.INVISIBLE);
     }
 }
