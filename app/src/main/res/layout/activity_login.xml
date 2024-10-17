@@ -12,13 +12,14 @@
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_150sdp"
         android:layout_margin="@dimen/_6sdp"
-        app:srcCompat="@drawable/logo2x"/>
+        app:srcCompat="@drawable/logo2nd"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:gravity="center"
-        android:text="LOGIN"
+        android:text="ĐĂNG NHẬP"
         android:textColor="@color/orange"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold" />

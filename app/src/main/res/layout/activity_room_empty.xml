@@ -380,14 +380,14 @@
                 android:textStyle="bold"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCreateContract"
+                android:id="@+id/btnEditRoom"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_30sdp"
                 android:background="@drawable/btn_orange"
-                android:text="Tạo hợp đồng"
-                android:textSize="@dimen/_11sdp"
+                android:text="Sửa phòng"
                 android:textColor="@color/white"
-                android:textStyle="bold"/>
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
         </LinearLayout>
 
 

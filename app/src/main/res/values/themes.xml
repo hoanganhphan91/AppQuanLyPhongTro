@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.DuAn1" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#FFA000</item>
-        <item name="colorPrimaryVariant">#DC6620</item>
+        <item name="colorPrimary">#0e5d7b</item>
+        <item name="colorPrimaryVariant">#0e5d7b</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -16,8 +16,8 @@
 
     <style name="Theme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#FFA000</item>
-        <item name="colorPrimaryVariant">#DC6620</item>
+        <item name="colorPrimary">#0e5d7b</item>
+        <item name="colorPrimaryVariant">#0e5d7b</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -34,7 +34,7 @@
     </style>
     <style name="CustomAlertDialog" parent="Theme.MaterialComponents.Dialog.Alert">
         <item name="android:windowBackground">@drawable/border</item>
-        <item name="android:textColor">#FFA000</item>
+        <item name="android:textColor">#0e5d7b</item>
         <item name="android:textColorPrimary">@color/black</item>
     </style>
 </resources>

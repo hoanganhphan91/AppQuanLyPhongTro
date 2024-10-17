@@ -61,10 +61,15 @@ public class RoomEmptyActivity extends AppCompatActivity {
             builder.create().show();
         });
         //create contract
-        binding.btnCreateContract.setOnClickListener(view -> {
-            Intent intent = new Intent(this,CreateContractActivity.class);
-            intent.putExtra("room",room);
-            startActivity(intent);
+//        binding.btnCreateContract.setOnClickListener(view -> {
+//            Intent intent = new Intent(this,CreateContractActivity.class);
+//            intent.putExtra("room",room);
+//            startActivity(intent);
+//        });
+        binding.btnEditRoom.setOnClickListener(view -> {
+//            Intent intent = new Intent(this,CreateContractActivity.class);
+//            intent.putExtra("room",room);
+//            startActivity(intent);
         });
     }
 
