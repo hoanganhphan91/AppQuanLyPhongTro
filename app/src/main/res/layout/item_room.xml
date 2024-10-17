@@ -17,7 +17,7 @@
             android:id="@+id/img"
             android:layout_width="40dp"
             android:layout_height="60dp"
-            app:srcCompat="@drawable/room_close3" />
+            app:srcCompat="@drawable/room_close2" />
         <TextView
             android:id="@+id/tvRoomCode"
             android:layout_width="wrap_content"

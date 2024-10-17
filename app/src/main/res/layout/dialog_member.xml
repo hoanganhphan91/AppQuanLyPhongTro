@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="@dimen/_30sdp"
-        android:background="#000000"
+        android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:title="">
@@ -141,13 +141,13 @@
                 android:paddingStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginBottom="@dimen/_2sdp"
-
+                android:inputType="number"
                 android:textSize="@dimen/_10ssp"
                 android:background="@drawable/border_edit_orange" />
             <ImageView
                 android:id="@+id/imgMember"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_40sdp"
                 android:layout_gravity="center"

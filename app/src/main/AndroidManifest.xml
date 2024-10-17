@@ -20,20 +20,15 @@
         android:theme="@style/Theme.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".RevenueActivity"
-            android:exported="false" />
-        <activity
             android:name=".MenuMainActivity"
             android:exported="false" />
         <activity
             android:name=".ServiceDetailActivity"
             android:exported="false" />
-        <activity
-            android:name=".Splash_Activity"
+        <activity android:name=".Splash_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -48,7 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".ServiceManagerActivity"
-            android:exported="false" />
+            android:exported="false"></activity>
         <activity
             android:name=".ShowMemberContract"
             android:exported="false">
@@ -58,7 +53,8 @@
         </activity>
         <activity
             android:name=".ContractManageActivity"
-            android:exported="false"></activity>
+            android:exported="false">
+        </activity>
         <activity
             android:name=".RoomAvalibleActivity"
             android:exported="false" />
@@ -79,16 +75,19 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".CreateRoomActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CreateRoomTypeActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
+        <activity android:name=".CreateRoomActivity"
+            android:exported="false"/>
+        <activity android:name=".CreateRoomTypeActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false">
+
+        </activity>
     </application>
 
 </manifest>
