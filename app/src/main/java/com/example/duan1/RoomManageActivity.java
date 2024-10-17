@@ -61,7 +61,18 @@ public class RoomManageActivity extends AppCompatActivity {
             subListRoom();
             floorAdapter.notifyDataSetChanged();
         });
-
+        binding.cboFilterUnder1M.setOnCheckedChangeListener((compoundButton, b) -> {
+            listRoom.clear();
+            String keyword = binding.edSearch.getText().toString();
+            if (b) {
+                int price = 1000000;
+                listRoom.addAll(db.roomDao().getRoomsByRentCode(price));
+            } else {
+                listRoom.addAll(db.roomDao().searchRoom("%" + binding.edSearch.getText().toString() + "%"));
+            }
+            subListRoom();
+            floorAdapter.notifyDataSetChanged();
+        });
         binding.edSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}

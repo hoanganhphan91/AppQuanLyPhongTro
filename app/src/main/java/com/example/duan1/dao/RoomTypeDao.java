@@ -33,4 +33,8 @@ public interface RoomTypeDao {
     @Query("select * from RoomType rt join Room r on rt.idRoomType = r.idRoomType " +
             "join Contract ct on ct.roomCode= r.roomCode where ct.idContract = :idContract limit 1")
     RoomType getRTByIdContract(int idContract);
+
+    @Query("select rentCode from RoomType rt join Room r on rt.idRoomType = r.idRoomType " +
+            "join Contract ct on ct.roomCode= r.roomCode where r.roomCode = :idRoom limit 1")
+    int getRentCodeByRoomCode(int idRoom);
 }
